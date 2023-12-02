@@ -9,6 +9,8 @@ const paper3 = document.querySelector("#p3");
 const paper4 = document.querySelector("#p4");
 const paper5 = document.querySelector("#p5");
 
+const cover = document.querySelector("bottom-cover")
+
 // Event Listener
 prevBtn.addEventListener("click", goPrevPage);
 nextBtn.addEventListener("click", goNextPage);
@@ -54,12 +56,7 @@ function goNextPage() {
             case 4:
                 paper4.classList.add("flipped");
                 paper4.style.zIndex = 4;
-                break;     
-            case 5:
-                paper5.classList.add("flipped");
-                paper5.style.zIndex = 5;
-                closeBook(false);
-                break;         
+                break;           
             default:
                 throw new Error("unkown state");
         }
@@ -74,6 +71,8 @@ function goPrevPage() {
                 closeBook(true);
                 paper1.classList.remove("flipped");
                 paper1.style.zIndex = 5;
+                book.style.transform = "rotateX(25deg) rotateY(0deg) rotateZ(-10deg)";
+                book.style.transition = "transform 0.5s";
                 break;
             case 3:
                 paper2.classList.remove("flipped");
@@ -86,8 +85,13 @@ function goPrevPage() {
                 break;
             case 5:
                 openBook();
-                paper3.classList.remove("flipped");
-                paper3.style.zIndex = 2;
+                paper4.classList.remove("flipped");
+                paper4.style.zIndex = 2;
+                break;
+            case 6:
+                openBook();
+                paper5.classList.remove("flipped");
+                paper5.style.zIndex = 1;
                 break;
             default:
                 throw new Error("unkown state");

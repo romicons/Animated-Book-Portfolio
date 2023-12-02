@@ -9,7 +9,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: sans-serif;
+    font-family: 'Grenze Gotisch', serif, sans-serif;
     background-color: powderblue;
 }
 
@@ -196,7 +196,6 @@ h2 {
 
 #f1 {
     background-color: #866a80;
-    font-family: 'Grenze Gotisch', serif;
     font-weight: bold;
     font-size: 1.2em;
     color: #fffbff;
@@ -217,19 +216,135 @@ h2 {
 
 /* SECTION SKILLS STYLE */
 
+#b2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1em;
+}
+
 #f3 {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    font-family: sans-serif;
 }
 
 .skills-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1.5em;
+    justify-content: center;
+    text-align: center;
+}
+
+/* HEXAGONAL DIVS */
+
+.hexagon {
+    overflow: hidden;
+    visibility: hidden;
+    -webkit-transform: rotate(120deg);
+    -moz-transform: rotate(120deg);
+    -ms-transform: rotate(120deg);
+    -o-transform: rotate(120deg);
+    transform: rotate(120deg);
+    cursor: pointer;
+}
+
+.hexagon2 {
+    width: 7em;
+    height: 6em;
+    margin: 0 auto;
+}
+
+.hexagon3 {
+    width: 8em;
+    height: 6.1em;
+}
+
+.hexagon-in1, .hexagon-in3 {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    -o-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+}
+
+.hexagon-in2 {
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+    -webkit-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    -o-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+}
+
+.hexagon-in3 {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    visibility: visible;
+    -webkit-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    -o-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+}
+
+.html {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("img/icons/HTML5-Pixel.png");
+    background-size: 3.5em;
+    background-color: #bcc6cc;
+}
+
+.css3 {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("img/icons/CSS3-Pixel.png");
+    background-size: 3.5em;
+    background-color: #bcc6cc;
+}
+
+.javascript {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("img/icons/JS-Pixel.png");
+    background-size: 3.5em;
+    background-color: #bcc6cc;
+}
+
+.sass {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("img/icons/SASS-Pixel.png");
+    background-size: 3.5em;
+    background-color: #bcc6cc;
+}
+
+.react {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("img/icons/REACT-Pixel.png");
+    background-size: 3.5em;
+    background-color: #bcc6cc;
+}
+
+.git {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("img/icons/GITHUB-Pixel.png");
+    background-size: 3.5em;
+    background-color: #bcc6cc;
 }
 
 /* SECTION PROYECTS STYLE */

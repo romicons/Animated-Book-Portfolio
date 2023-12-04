@@ -241,64 +241,40 @@ h2 {
     text-align: center;
 }
   
-.medal-container {
-    filter: drop-shadow(0px 1px 4px #021E23);
-}
-  
 .medal {
-    display: grid;
-    justify-content: center;
-    position: relative;
-    transition: transform 3s;
-    transform-style: preserve-3d;
-}
-
-.medal:hover, .hexagon3 {
-    transform: rotateY(.5turn);
-}
-  
-/* HEXAGONAL DIVS */
-  
-.hexagon {
-    overflow: hidden;
-    visibility: hidden;
-    -webkit-transform: rotate(120deg);
-    -moz-transform: rotate(120deg);
-    -ms-transform: rotate(120deg);
-    -o-transform: rotate(120deg);
-    transform: rotate(120deg);
-    cursor: pointer;
-}
-  
-.hexagon2 {
-    width: 6em;
-    height: 7em;
-    margin: 0 auto;
-}
-  
-.hexagon3 {
-    width: 6em;
-    height: 7em;
-}
-  
-.hexagon3, .hexagon2 {
-    transform-style: preserve-3d;
+    width: 7em;
+    filter: drop-shadow(1px 3px 2px grey);
   }
   
-.hexagon-in1, .hexagon-in3 {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
+  .medal-content {
+    text-align: center;
     position: relative;
-    -webkit-transform: rotate(-60deg);
-    -moz-transform: rotate(-60deg);
-    -ms-transform: rotate(-60deg);
-    -o-transform: rotate(-60deg);
-    transform: rotate(-60deg);
-}
+    padding: 3.5em 1em;
+    transition: transform 3s;
+    background: pink;
+    transform-style: preserve-3d;
+    border-radius: 50%;
+  }
   
-.hexagon-in2, .hexagon-in3 {
+  .medal:hover .medal-content {
+    transform: rotateY(.5turn);
+  }
+  
+  .front-medal, .back-medal {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+  
+  .front-medal {
     background:
     -webkit-linear-gradient(
     -72deg,
@@ -329,51 +305,69 @@ h2 {
     #dedede 84%,
     #a1a1a1
   );
-  -webkit-transform: rotate(-60deg);
-  transform: rotate(-60deg);
   }
   
-.hexagon-in2 {
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    transform: rotateY(.5turn);
-    visibility: visible;
-    -webkit-transform: rotate(-60deg);
-    transform: rotate(-60deg);
-}
+  .front-medal::before {
+    content: '';
+    position: absolute;
+    --spacer: 0.4em;
+    top: var(--spacer);
+    bottom: var(--spacer);
+    left: var(--spacer);
+    right: var(--spacer);
+    border: 1px solid currentColor;
+    transform: translateZ(0.5rem);
+    border-radius: 50%;
+    box-shadow: inset -4px 2px 1px 1px grey, inset -4px -2px 1px 1px lightgray, inset 4px 0px 1px 1px lightgray;
+  }
   
-.hexagon-in3 {
-    width: 100%;
-    height: 100%;
-    visibility: visible;
-    -webkit-transform: rotate(-60deg);
-    transform: rotate(-60deg);
-}
-  
-.hex-title {
-    position:absolute;
-    font-size: 1em;
-    transform: rotateY(180deg);
-    color: #0d0210;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-  
-.skill-icon {
-    position:absolute;
+  .skill-icon {
     width: 3.5em;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-}
+    transform: translateZ(1.2rem); 
+  }
+  
+  .back-medal {
+    transform: rotateY(.5turn);
+    color: #333;
+    background:
+    -webkit-linear-gradient(
+    72deg,
+    #dedede,
+    #ffffff 16%,
+    #dedede 21%,
+    #ffffff 24%,
+    #dedede 36%,
+    #ffffff 45%,
+    #ffffff 60%,
+    #dedede 72%,
+    #ffffff 80%,
+    #dedede 84%,
+    #a1a1a1
+  );
+    background:
+    linear-gradient(
+    72deg,
+    #dedede,
+    #ffffff 16%,
+    #dedede 21%,
+    #ffffff 24%,
+    #dedede 36%,
+    #ffffff 45%,
+    #ffffff 60%,
+    #dedede 72%,
+    #ffffff 80%,
+    #dedede 84%,
+    #a1a1a1
+  );
+  box-shadow: inset -4px -2px 1px 1px grey, inset -4px -2px 1px 1px lightgray, inset 4px 0px 3px 1px lightgray;
+  }
+  
+  .skill-title {
+    transform: translateZ(1rem);
+    font-size: 1.5rem;
+    line-height: 1.6;
+    order: 2;
+  }
 
 /* SECTION PROYECTS STYLE */
 

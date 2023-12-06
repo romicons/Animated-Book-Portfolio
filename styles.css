@@ -4,12 +4,26 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: "SHPinscher";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("fonts/SHPinscher-Regular.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "MonaspaceKrypton";
+    src: url("fonts/MonaspaceKrypton-SemiBold.woff");
+}
+
+
 body {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: sans-serif;
+    font-family: "SHPinscher", serif, sans-serif;
     background-color: powderblue;
 }
 
@@ -17,13 +31,8 @@ h1, h2 {
     font-family: "MonaspaceKrypton";
 }
 
-a {
-    text-decoration: none;
-    cursor: pointer;
-    color: red
-}
-
 /* Book */
+
 .book {
     position: relative;
     width: 27em;
@@ -294,7 +303,6 @@ h2 {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    font-family: sans-serif;
     text-align: center;
     align-content: center;
 }
@@ -314,6 +322,16 @@ h2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1.5em;
+}
+  
+.box-pa {
+    background-image: paint(pixelbox);
+    --pixelbox-border: 3px;
+    --pixelbox-border-color: #000000;
+    display: inline-block;
+    --pixelbox-background-shadow-border: 6px;
+    --pixelbox-border-radius: 7px;
+    --pixelbox-background-shadow-position: bottom-right; 
 }
   
 .box-pa {
@@ -375,8 +393,7 @@ h2 {
 }
   
 .skill-icon {
-    width: 3em;
-    padding: 2.5px;
+    width: 3.3em;
     transform: translateZ(1.2rem); 
 }
   

@@ -4,16 +4,35 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: "SHPinscher";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("fonts/SHPinscher-Regular.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "MonaspaceKrypton";
+    src: url("fonts/MonaspaceKrypton-SemiBold.woff");
+}
+
+
 body {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Grenze Gotisch', serif, sans-serif;
+    font-family: "SHPinscher", serif, sans-serif;
     background-color: powderblue;
 }
 
+h1, h2 {
+    font-family: "MonaspaceKrypton";
+}
+
 /* Book */
+
 .book {
     position: relative;
     width: 27em;
@@ -209,7 +228,6 @@ h2 {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    font-family: sans-serif;
     text-align: center;
     align-content: center;
 }
@@ -241,26 +259,36 @@ h2 {
     text-align: center;
 }
   
-.medal {
-    width: 7em;
-    filter: drop-shadow(1px 3px 2px grey);
-  }
+.box-pa {
+    background-image: paint(pixelbox);
+    --pixelbox-border: 3px;
+    --pixelbox-border-color: #000000;
+    display: inline-block;
+    --pixelbox-background-shadow-border: 6px;
+    --pixelbox-border-radius: 7px;
+    --pixelbox-background-shadow-position: bottom-right; 
+}
   
-  .medal-content {
+.medal {
+    width: 6em;
+    filter: drop-shadow(1px 3px 2px grey);
+}
+  
+.medal-content {
     text-align: center;
     position: relative;
-    padding: 3.5em 1em;
+    padding: 3em 1em;
     transition: transform 3s;
-    background: pink;
     transform-style: preserve-3d;
-    border-radius: 50%;
-  }
+    width: 100%;
+    --pixelbox-background-color: lightgray;
+}
   
-  .medal:hover .medal-content {
+.medal:hover .medal-content {
     transform: rotateY(.5turn);
-  }
+}
   
-  .front-medal, .back-medal {
+.front-medal, .back-medal {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -271,103 +299,42 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-  }
+}
   
-  .front-medal {
-    background:
-    -webkit-linear-gradient(
-    -72deg,
-    #dedede,
-    #ffffff 16%,
-    #dedede 21%,
-    #ffffff 24%,
-    #dedede 36%,
-    #ffffff 45%,
-    #ffffff 60%,
-    #dedede 72%,
-    #ffffff 80%,
-    #dedede 84%,
-    #a1a1a1
-  );
-    background:
-    linear-gradient(
-    -72deg,
-    #dedede,
-    #ffffff 16%,
-    #dedede 21%,
-    #ffffff 24%,
-    #dedede 36%,
-    #ffffff 45%,
-    #ffffff 60%,
-    #dedede 72%,
-    #ffffff 80%,
-    #dedede 84%,
-    #a1a1a1
-  );
-  }
-  
-  .front-medal::before {
+.front-medal::before {
     content: '';
     position: absolute;
-    --spacer: 0.4em;
+    background-image: paint(pixelbox);
+    transform: translateZ(0.5rem);
+    --spacer: 0.7rem;
     top: var(--spacer);
     bottom: var(--spacer);
     left: var(--spacer);
     right: var(--spacer);
-    border: 1px solid currentColor;
-    transform: translateZ(0.5rem);
-    border-radius: 50%;
+    border-radius: 42%;
+    border: 2px solid currentColor;
     box-shadow: inset -4px 2px 1px 1px grey, inset -4px -2px 1px 1px lightgray, inset 4px 0px 1px 1px lightgray;
-  }
+    --pixelbox-background-color: #EEEFF4;
+}
   
-  .skill-icon {
-    width: 3.5em;
+.skill-icon {
+    width: 3.3em;
     transform: translateZ(1.2rem); 
-  }
+}
   
-  .back-medal {
+.back-medal {
     transform: rotateY(.5turn);
     color: #333;
-    background:
-    -webkit-linear-gradient(
-    72deg,
-    #dedede,
-    #ffffff 16%,
-    #dedede 21%,
-    #ffffff 24%,
-    #dedede 36%,
-    #ffffff 45%,
-    #ffffff 60%,
-    #dedede 72%,
-    #ffffff 80%,
-    #dedede 84%,
-    #a1a1a1
-  );
-    background:
-    linear-gradient(
-    72deg,
-    #dedede,
-    #ffffff 16%,
-    #dedede 21%,
-    #ffffff 24%,
-    #dedede 36%,
-    #ffffff 45%,
-    #ffffff 60%,
-    #dedede 72%,
-    #ffffff 80%,
-    #dedede 84%,
-    #a1a1a1
-  );
-  box-shadow: inset -4px -2px 1px 1px grey, inset -4px -2px 1px 1px lightgray, inset 4px 0px 3px 1px lightgray;
-  }
+    --pixelbox-background-shadow-border: 6px;
+    --pixelbox-background-shadow-position: bottom-right; 
+}
   
-  .skill-title {
+.skill-title {
     transform: translateZ(1rem);
     font-size: 1.5rem;
     line-height: 1.6;
-    order: 2;
-  }
+}
+
 
 /* SECTION PROYECTS STYLE */
 

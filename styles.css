@@ -13,6 +13,19 @@ body {
     background-color: powderblue;
 }
 
+<<<<<<< Updated upstream
+=======
+h1, h2 {
+    font-family: "MonaspaceKrypton";
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: red
+}
+
+>>>>>>> Stashed changes
 /* Book */
 .book {
     position: relative;
@@ -171,6 +184,82 @@ i {
     z-index: 1;
 }
 
+/* NAV STYLING*/
+
+nav {
+    font-family: "MonaspaceKrypton", serif, sans-serif;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin: -3.5em;
+    overflow: hidden;
+    display: flex;
+    gap: 1em;
+}
+
+.row {
+    width: 50px;
+    margin: 5px auto;
+    background-color: red;
+    border: 1px solid black;
+}
+
+.markdown {
+    height: 100px;
+    position: relative;
+    background-color: blue;
+    perspective: 6rem;
+    transform-style: preserve-3d
+}
+  
+  .markdown:before {
+    position: absolute;
+    content: '';
+    width: 35px;
+    height: 35px;
+    top: 133px;
+    left: 7px;
+    background-color: blue;
+    transform: rotate(45deg)
+}
+
+.markdown:hover {
+    box-shadow: 0em 0em 0.375em 0.0625em #4d3147;
+}
+
+.nav-icon {
+    width: 2.2rem;
+}
+.nav-item {
+    display: flex;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    text-align: center;
+    align-content: center;
+}
+
+.red {
+    background-color: red;
+    transform: translateZ(-1rem);
+}
+
+.blue {
+    background-color: blue;
+    transform: translateZ(-2rem);
+}
+
+.yellow {
+    background-color: yellow;
+    transform: translateZ(-3rem);
+}
+
+.green {
+    background-color: green;
+    transform: translateZ(-4rem);
+}
+
+
+
 /* PAGES STYLING */
 
 .header-section {
@@ -184,8 +273,6 @@ i {
 h2 {
     font-size: 2em;
 }
-
-
 
 #b1, #b2, #b3, #b4, #b5 {
     border-right: 3px solid powderblue;
@@ -231,6 +318,87 @@ h2 {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1.5em;
 }
+<<<<<<< Updated upstream
+=======
+  
+.box-pa {
+    background-image: paint(pixelbox);
+    --pixelbox-border: 3px;
+    --pixelbox-border-color: #000000;
+    display: inline-block;
+    --pixelbox-background-shadow-border: 6px;
+    --pixelbox-border-radius: 7px;
+    --pixelbox-background-shadow-position: bottom-right; 
+}
+  
+.medal {
+    width: 6em;
+    filter: drop-shadow(1px 3px 2px grey);
+}
+  
+.medal-content {
+    text-align: center;
+    position: relative;
+    padding: 3em 1em;
+    transition: transform 3s;
+    transform-style: preserve-3d;
+    width: 100%;
+    --pixelbox-background-color: lightgray;
+}
+  
+.medal:hover .medal-content {
+    transform: rotateY(.5turn);
+}
+  
+.front-medal, .back-medal {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.front-medal::before {
+    content: '';
+    position: absolute;
+    background-image: paint(pixelbox);
+    transform: translateZ(0.5rem);
+    --spacer: 0.7rem;
+    top: var(--spacer);
+    bottom: var(--spacer);
+    left: var(--spacer);
+    right: var(--spacer);
+    border-radius: 42%;
+    border: 2px solid currentColor;
+    box-shadow: inset -4px 2px 1px 1px grey, inset -4px -2px 1px 1px lightgray, inset 4px 0px 1px 1px lightgray;
+    --pixelbox-background-color: #EEEFF4;
+}
+  
+.skill-icon {
+    width: 3em;
+    padding: 2.5px;
+    transform: translateZ(1.2rem); 
+}
+  
+.back-medal {
+    transform: rotateY(.5turn);
+    color: #333;
+    --pixelbox-background-shadow-border: 6px;
+    --pixelbox-background-shadow-position: bottom-right; 
+}
+  
+.skill-title {
+    transform: translateZ(1rem);
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+>>>>>>> Stashed changes
 
 /* SECTION PROYECTS STYLE */
 

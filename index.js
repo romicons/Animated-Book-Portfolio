@@ -20,13 +20,8 @@ let currentLocation = 1;
 let numOfPapers = 5;
 let maxLocation = numOfPapers + 1;
 
-<<<<<<< Updated upstream
-function openBook() {
-    book.style.transform = "translateX(50%)";
-=======
 const openBook = () => {
     book.style.transform = "translate(50%, 5%)";
->>>>>>> Stashed changes
     prevBtn.style.transform = "translateX(-180px)";
     nextBtn.style.transform = "translateX(180px)";
 }

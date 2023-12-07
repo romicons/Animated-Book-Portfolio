@@ -13,8 +13,6 @@ body {
     background-color: powderblue;
 }
 
-<<<<<<< Updated upstream
-=======
 h1, h2 {
     font-family: "MonaspaceKrypton";
 }
@@ -25,7 +23,6 @@ a {
     color: red
 }
 
->>>>>>> Stashed changes
 /* Book */
 .book {
     position: relative;
@@ -318,8 +315,6 @@ h2 {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1.5em;
 }
-<<<<<<< Updated upstream
-=======
   
 .box-pa {
     background-image: paint(pixelbox);
@@ -398,7 +393,6 @@ h2 {
     line-height: 1.6;
 }
 
->>>>>>> Stashed changes
 
 /* SECTION PROYECTS STYLE */
 

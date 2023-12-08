@@ -289,7 +289,6 @@ h2 {
 
 #f1 {
     background-color: #866a80;
-    font-family: 'Grenze Gotisch', serif;
     font-weight: bold;
     font-size: 1.2em;
     color: #fffbff;
@@ -309,29 +308,29 @@ h2 {
 
 /* SECTION SKILLS STYLE */
 
+#b2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1em;
+}
+  
 #f3 {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    font-family: sans-serif;
 }
 
 .skills-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1.5em;
-}
-  
-.box-pa {
-    background-image: paint(pixelbox);
-    --pixelbox-border: 3px;
-    --pixelbox-border-color: #000000;
-    display: inline-block;
-    --pixelbox-background-shadow-border: 6px;
-    --pixelbox-border-radius: 7px;
-    --pixelbox-background-shadow-position: bottom-right; 
+    justify-content: center;
+    text-align: center;
 }
   
 .box-pa {
@@ -406,7 +405,7 @@ h2 {
   
 .skill-title {
     transform: translateZ(1rem);
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     line-height: 1.6;
 }
 

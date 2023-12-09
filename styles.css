@@ -125,6 +125,7 @@ a {
 }
 
 /* Paper flip effect */
+
 .flipped .front,
 .flipped .back {
     transform: rotateY(-180deg);
@@ -153,6 +154,7 @@ a {
 }
 
 /* Controller Buttons */
+
 button {
     border: none;
     background-color: transparent;
@@ -175,6 +177,7 @@ i {
 }
 
 /* Paper stack order */
+
 #p1 {
     z-index: 7;
 }
@@ -210,36 +213,37 @@ nav {
     position: absolute;
     top: 0;
     left: 50%;
-    margin: -3.5em;
+    margin: -3.2em;
     overflow: hidden;
     display: flex;
     gap: 1em;
 }
 
 .row {
-    width: 50px;
-    margin: 5px auto;
-    background-color: red;
-    border: 1px solid black;
+    width: 3.125rem;
+    height: 12.4rem;
 }
 
 .markdown {
-    height: 100px;
+    display: flex;
+    justify-content: center;
+    height: 3.125rem;
     position: relative;
-    background-color: blue;
     perspective: 6rem;
-    transform-style: preserve-3d
+    transform-style: preserve-3d;
+    background-color: red;
 }
   
   .markdown:before {
     position: absolute;
     content: '';
-    width: 35px;
-    height: 35px;
-    top: 133px;
-    left: 7px;
-    background-color: blue;
-    transform: rotate(45deg)
+    width: 2.2rem;
+    height: 2.2rem;
+    top: 2rem;
+    left: 0.4rem;
+    background-color: red;
+    transform: rotate(45deg);
+    z-index: -1;
 }
 
 .markdown:hover {
@@ -251,10 +255,14 @@ nav {
 }
 .nav-item {
     display: flex;
+    justify-content: center;
+}
+
+nav p {
+    display: none;
     writing-mode: vertical-rl;
     text-orientation: upright;
     text-align: center;
-    align-content: center;
 }
 
 .red {
@@ -323,6 +331,17 @@ h2 {
 
 /* HERO STYLE */
 
+#b1 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1em;
+    border-color: #473844;
+    border-style: solid none solid solid;
+}
+
 #f2 {
     display: flex;
     flex-wrap: wrap;
@@ -335,11 +354,7 @@ h2 {
 }
 
 h1 {
-    
-    text-shadow: 2px 2px 0px #FF1E1C ,
-    4px 4px 0px #009055,
-    6px 6px 0px #F9E701,
-    8px 8px 0px #0071B3;
+    font-size: 2.8rem;
 }
 
 
@@ -543,10 +558,6 @@ h1 {
 
 .form-container {
     width: 90%;
-}
-
-#b1 {
-    background-color: #866a80;
 }
 
 .cover_img {

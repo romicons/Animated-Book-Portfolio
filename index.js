@@ -72,7 +72,6 @@ const goNextPage = () => {
                 paper7.classList.add("flipped");
                 paper7.style.zIndex = 7;
                 break;
-                
             default:
                 throw new Error("unkown state");
         }

@@ -28,7 +28,12 @@ body {
 }
 
 h1, h2 {
+    text-align: center;
     font-family: "MonaspaceKrypton";
+}
+
+a {
+    text-decoration: none;
 }
 
 /* Book */
@@ -171,22 +176,30 @@ i {
 
 /* Paper stack order */
 #p1 {
-    z-index: 5;
+    z-index: 7;
 }
 
 #p2 {
-    z-index: 4;
+    z-index: 6;
 }
 
 #p3 {
-    z-index: 3;
+    z-index: 5;
 }
 
 #p4 {
-    z-index: 2;
+    z-index: 4;
 }
 
 #p5 {
+    z-index: 3;
+}
+
+#p6 {
+    z-index: 2;
+}
+
+#p7 {
     z-index: 1;
 }
 
@@ -245,42 +258,56 @@ nav {
 }
 
 .red {
-    background-color: red;
+    background-color: #FF1E1C;
     transform: translateZ(-1rem);
 }
 
 .blue {
-    background-color: blue;
+    background-color: #0071B3;
     transform: translateZ(-2rem);
 }
 
 .yellow {
-    background-color: yellow;
+    background-color: #F9E701;
     transform: translateZ(-3rem);
 }
 
 .green {
-    background-color: green;
+    background-color: #009055;
     transform: translateZ(-4rem);
 }
-
-
 
 /* PAGES STYLING */
 
 .header-section {
     display: flex;
     gap: 1em;
-    text-align: center;
+    text-align: justify;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 1em;
+    font-size: 1.2rem;
+}
+
+.avatar-img {
+    width: 8em;
 }
 
 h2 {
     font-size: 2em;
+    text-shadow: 1px 1px 0px #866a80,
+    1px 2px 0px #866a80,
+    1px 3px 0px #866a80,
+    1px 4px 0px #866a80,
+    1px 5px 0px #866a80,
+    1px 6px 0px #866a80,
+    1px 10px 5px rgba(16, 16, 16, 0.5),
+    1px 15px 10px rgba(16, 16, 16, 0.4),
+    1px 20px 30px rgba(16, 16, 16, 0.3),
+    1px 25px 50px rgba(16, 16, 16, 0.2);
 }
 
-#b1, #b2, #b3, #b4, #b5 {
+#b1, #b2, #b3, #b4, #b5, #b6, #b7 {
     border-right: 3px solid powderblue;
 }
 
@@ -300,13 +327,29 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     text-align: center;
     align-content: center;
+    margin: 3em auto;
 }
 
-/* SECTION SKILLS STYLE */
+h1 {
+    
+    text-shadow: 2px 2px 0px #FF1E1C ,
+    4px 4px 0px #009055,
+    6px 6px 0px #F9E701,
+    8px 8px 0px #0071B3;
+}
+
+
+#f2 h2 {
+    font-size: 1.5rem;
+    text-shadow: none;
+}
+
+
+/* SKILLS SECTION STYLE */
 
 #b2 {
     display: flex;
@@ -392,8 +435,9 @@ h2 {
 }
   
 .skill-icon {
-    width: 3.3em;
+    width: 3em;
     transform: translateZ(1.2rem); 
+    padding: 2.5px;
 }
   
 .back-medal {
@@ -405,31 +449,91 @@ h2 {
   
 .skill-title {
     transform: translateZ(1rem);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     line-height: 1.6;
 }
 
 
 /* SECTION PROYECTS STYLE */
 
+#b3 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1em;
+}
+  
 #f4 {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    font-family: sans-serif;
 }
 
-.proyects-container {
-    display: none;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1.5em;
+.proyects-container .box-pa {
+    --pixelbox-border-radius: 0;
 }
 
-/* SECTION CONTACT STYLE */
+.proyect{
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1em;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
 
-#f5 {
+.proyect-frame {
+    width: 15em;
+    filter: drop-shadow(1px 3px 2px grey);
+    --pixelbox-background-color: #6A3c20 ;
+    --pixelbox-background-shadow-border: 3px;
+    --pixelbox-background-shadow-color: #592E0B
+}
+  
+.proyect-content {
+    text-align: center;
+    position: relative;
+    padding: 6em 1em;
+    width: 100%;
+} 
+  
+.proyect-content::before {
+    content: '';
+    position: absolute;
+    background-image: paint(pixelbox);
+    transform: translateZ(0.5rem);
+    --spacer: 0.7rem;
+    top: var(--spacer);
+    bottom: var(--spacer);
+    left: var(--spacer);
+    right: var(--spacer);
+    border: 2px solid currentColor;
+    box-shadow: inset -4px 2px 1px 1px grey, inset -4px -2px 1px 1px lightgray, inset 4px 0px 1px 1px lightgray;
+}
+  
+.proyect-img {
+    width: 3em;
+    transform: translateZ(1.2rem); 
+    padding: 2.5px;
+}
+  
+.proyect-description {
+    line-height: 1.6;
+    text-align: justify;
+    margin: 1em;
+}
+
+.proyect h3 {
+    font-family: "MonaspaceKrypton";
+}
+
+/* CONTACT SECTION STYLE */
+
+#f7 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;

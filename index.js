@@ -8,17 +8,23 @@ const paper2 = document.querySelector("#p2");
 const paper3 = document.querySelector("#p3");
 const paper4 = document.querySelector("#p4");
 const paper5 = document.querySelector("#p5");
+const paper6 = document.querySelector("#p6");
+const paper7 = document.querySelector("#p7");
 
-const cover = document.querySelector("bottom-cover")
+
+const heroSection = document.querySelector("#p2");
+const skillsSection = document.querySelector("#b2");
+const proyectsSection = document.querySelector("#f4");
+const contactSection = document.querySelector("#b4");
 
 
 // Business Logic
 let currentLocation = 1;
-let numOfPapers = 5;
+let numOfPapers = 7;
 let maxLocation = numOfPapers + 1;
 
 const openBook = () => {
-    book.style.transform = "translateX(50%)";
+    book.style.transform = "translate(50%, 5%)";
     prevBtn.style.transform = "translateX(-180px)";
     nextBtn.style.transform = "translateX(180px)";
 }
@@ -53,7 +59,20 @@ const goNextPage = () => {
             case 4:
                 paper4.classList.add("flipped");
                 paper4.style.zIndex = 4;
-                break;           
+                break;  
+            case 5:
+                paper5.classList.add("flipped");
+                paper5.style.zIndex = 5;
+                break;
+            case 6:
+                paper6.classList.add("flipped");
+                paper6.style.zIndex = 6;
+                break;
+            case 7:
+                paper7.classList.add("flipped");
+                paper7.style.zIndex = 7;
+                break;
+                
             default:
                 throw new Error("unkown state");
         }
@@ -67,28 +86,38 @@ const goPrevPage = () => {
             case 2:
                 closeBook(true);
                 paper1.classList.remove("flipped");
-                paper1.style.zIndex = 5;
+                paper1.style.zIndex = 7;
                 book.style.transform = "rotateX(25deg) rotateY(0deg) rotateZ(-10deg)";
                 book.style.transition = "transform 0.5s";
                 break;
             case 3:
                 paper2.classList.remove("flipped");
-                paper2.style.zIndex = 4;
+                paper2.style.zIndex = 6;
                 break;
             case 4:
                 openBook();
                 paper3.classList.remove("flipped");
-                paper3.style.zIndex = 3;
+                paper3.style.zIndex = 5;
                 break;
             case 5:
                 openBook();
                 paper4.classList.remove("flipped");
-                paper4.style.zIndex = 2;
+                paper4.style.zIndex = 4;
                 break;
             case 6:
                 openBook();
                 paper5.classList.remove("flipped");
-                paper5.style.zIndex = 1;
+                paper5.style.zIndex = 3;
+                break;
+            case 7:
+                openBook();
+                paper6.classList.remove("flipped");
+                paper6.style.zIndex = 2;
+                break;
+            case 8:
+                openBook();
+                paper7.classList.remove("flipped");
+                paper7.style.zIndex = 1;
                 break;
             default:
                 throw new Error("unkown state");
@@ -159,4 +188,5 @@ if ('paintWorklet' in CSS && 'registerProperty' in CSS && 'CSSUnitValue' in wind
  } else {
      console.log("Not Supported");
  } 
+
  CSS.paintWorklet.addModule('pixelbox.js');

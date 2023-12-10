@@ -1,6 +1,6 @@
 // References to DOM Elements
-const prevBtn = document.querySelector("#prev-btn");
-const nextBtn = document.querySelector("#next-btn");
+const prevBtn = document.querySelector("#prev-page");
+const nextBtn = document.querySelector("#next-page");
 const book = document.querySelector("#book");
 
 const paper1 = document.querySelector("#p1");
@@ -12,7 +12,7 @@ const paper6 = document.querySelector("#p6");
 const paper7 = document.querySelector("#p7");
 
 
-const heroSection = document.querySelector("#p2");
+const heroSection = document.querySelector("#b1");
 const skillsSection = document.querySelector("#b2");
 const proyectsSection = document.querySelector("#f4");
 const contactSection = document.querySelector("#b4");
@@ -25,19 +25,19 @@ let maxLocation = numOfPapers + 1;
 
 const openBook = () => {
     book.style.transform = "translate(50%, 5%)";
-    prevBtn.style.transform = "translateX(-180px)";
-    nextBtn.style.transform = "translateX(180px)";
-}
+    setTimeout(() => {
+        prevBtn.style.display = "block";
+    }, 500); 
+};
+
 
 const closeBook = (isAtBeginning) => {
     if(isAtBeginning) {
         book.style.transform = "translateX(0%)";
+        prevBtn.style.display = "none";
     } else {
         book.style.transform = "translateX(100%)";
     }
-    
-    prevBtn.style.transform = "translateX(0px)";
-    nextBtn.style.transform = "translateX(0px)";
 }
 
 const goNextPage = () => {
@@ -67,10 +67,7 @@ const goNextPage = () => {
             case 6:
                 paper6.classList.add("flipped");
                 paper6.style.zIndex = 6;
-                break;
-            case 7:
-                paper7.classList.add("flipped");
-                paper7.style.zIndex = 7;
+                nextBtn.style.display = "none";
                 break;
             default:
                 throw new Error("unkown state");
@@ -112,6 +109,7 @@ const goPrevPage = () => {
                 openBook();
                 paper6.classList.remove("flipped");
                 paper6.style.zIndex = 2;
+                nextBtn.style.display = "block";
                 break;
             case 8:
                 openBook();

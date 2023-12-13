@@ -270,19 +270,7 @@ nav {
     transform-style: preserve-3d;
     background-color: red;
 }
-  /*
-  .markdown:before {
-    position: absolute;
-    content: '';
-    width: 2.2rem;
-    height: 2.2rem;
-    top: 0.5rem;
-    left: 0.4rem;
-    background-color: red;
-    transform: rotate(45deg);
-    z-index: -1;
-}
-*/
+
 .marker:hover {
     box-shadow: 0.1em -0.1em 0.375em 0.0625em #4d3147;
 }

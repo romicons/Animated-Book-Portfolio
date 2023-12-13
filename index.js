@@ -128,36 +128,13 @@ const goPrevPage = () => {
 
 // NAV FUNCTIONS
 
-/*
-const markDown = () => {
-    markdownBody.style.zIndex = "90";
-    setTimeout(() => {
-        markdownBody.style.height = "4.6rem";
-        markerTip.innerHTML = `
-            .markdown::before {
-                position: absolute;
-                content: '';
-                width: 2.2rem;
-                height: 2.2rem;
-                top: 3.5rem;
-                background-color: red;
-                transform: rotate(45deg);
-                z-index: -1;
-            }
-        `;
-        document.head.appendChild(markdownTip);
-    }, 500)
-};
-*/
-
-const markdownBody = document.querySelector(".marker");
 const navMarkdown = document.querySelectorAll(".marker");
 
 navMarkdown.forEach(markDown => {
     markDown.addEventListener("click", () => {
         let markDownElement = document.getElementById(markDown.id);
         let markdownTip = document.createElement('style');
-                markdownBody.style.zIndex = "90";
+                markDownElement.style.zIndex = "90";
                 setTimeout(() => {
                     markDownElement.style.height = "4.6rem";
                     markdownTip.innerHTML = `
@@ -173,7 +150,8 @@ navMarkdown.forEach(markDown => {
                         }
                     `;
                     document.head.appendChild(markdownTip);
-                }, 500);  
+                }, 500); 
+                console.log("funciono") 
     })
 });
 
@@ -181,7 +159,6 @@ navMarkdown.forEach(markDown => {
 
 prevBtn.addEventListener("click", goPrevPage);
 nextBtn.addEventListener("click", goNextPage);
-//.addEventListener("click", markDown);
 
 /*
 heroSection.addEventListener("click", markDown);

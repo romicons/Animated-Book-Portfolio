@@ -1,7 +1,9 @@
-// References to DOM Elements
+// REFERENCES TO DOM ELEMENTS
+
 const prevBtn = document.querySelector("#prev-page");
 const nextBtn = document.querySelector("#next-page");
 const book = document.querySelector("#book");
+
 
 const paper1 = document.querySelector("#p1");
 const paper2 = document.querySelector("#p2");
@@ -18,7 +20,7 @@ const proyectsSection = document.querySelector("#f4");
 const contactSection = document.querySelector("#b4");
 
 
-// Business Logic
+// BOOK LOGIC
 let currentLocation = 1;
 let numOfPapers = 7;
 let maxLocation = numOfPapers + 1;
@@ -124,10 +126,69 @@ const goPrevPage = () => {
     }
 }
 
-// Event Listener
+// NAV FUNCTIONS
+
+/*
+const markDown = () => {
+    markdownBody.style.zIndex = "90";
+    setTimeout(() => {
+        markdownBody.style.height = "4.6rem";
+        markerTip.innerHTML = `
+            .markdown::before {
+                position: absolute;
+                content: '';
+                width: 2.2rem;
+                height: 2.2rem;
+                top: 3.5rem;
+                background-color: red;
+                transform: rotate(45deg);
+                z-index: -1;
+            }
+        `;
+        document.head.appendChild(markdownTip);
+    }, 500)
+};
+*/
+
+const markdownBody = document.querySelector(".marker");
+const navMarkdown = document.querySelectorAll(".marker");
+
+navMarkdown.forEach(markDown => {
+    markDown.addEventListener("click", () => {
+        let markDownElement = document.getElementById(markDown.id);
+        let markdownTip = document.createElement('style');
+                markdownBody.style.zIndex = "90";
+                setTimeout(() => {
+                    markDownElement.style.height = "4.6rem";
+                    markdownTip.innerHTML = `
+                        .marker::before {
+                            position: absolute;
+                            content: '';
+                            width: 2.2rem;
+                            height: 2.2rem;
+                            top: 3.5rem;
+                            background-color: inherit;
+                            transform: rotate(45deg);
+                            z-index: -1;
+                        }
+                    `;
+                    document.head.appendChild(markdownTip);
+                }, 500);  
+    })
+});
+
+// EVENT LISTENER
+
 prevBtn.addEventListener("click", goPrevPage);
 nextBtn.addEventListener("click", goNextPage);
+//.addEventListener("click", markDown);
 
+/*
+heroSection.addEventListener("click", markDown);
+skillsSection.addEventListener ("click", markDown)
+proyectsSection.addEventListener("click", markDown);
+contactSection.addEventListener("click", markDown);
+*/
 
 // CSS HOUDINI PIXEL BOX LIBRARY FUNCTIONS
 

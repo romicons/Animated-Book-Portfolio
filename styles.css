@@ -4,6 +4,7 @@
     --clr-primary: #c9b7c7;
     --clr-secondary: #4d3147;
     --clr-accent: #866a80;
+    --clr-backbody: #d7fffe;
 
     --foreground: var(--clr-dark);
     --background: var(--clr-light);
@@ -36,7 +37,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: "SHPinscher", serif, sans-serif;
-    background-color: powderblue;
+    background-color: var(--clr-backbody);
     overflow: hidden;
 }
 
@@ -56,6 +57,7 @@ a {
     --clr-secondary: #c9b7c7;;
     --clr-accent: #866a80;
 
+    --clr-backbody: #001146;
     --foreground: var(--clr-dark);
     --background: var(--clr-light);
 }
@@ -128,7 +130,7 @@ a {
     position: absolute;
     width: 2rem;
     height: 8px;
-    background: #1B233E;
+    background: var(--clr-accent);
     bottom: -8px;
     left: -0.5rem;
     border-radius: 3px;
@@ -192,7 +194,7 @@ a {
     position: relative;
     width: 27em;
     height: 36em;
-    top: 1.2em;
+    /*top: 1.2em;*/
     color: var(--clr-light);
     transform-style: preserve-3d;
     transform: rotateX(25deg) rotateY(0deg) rotateZ(-10deg);
@@ -206,6 +208,7 @@ a {
     top: 0;
     left: 0;
     perspective: 1500px;
+    transition: transform 0.5s;
 }
 
 .front,
@@ -217,7 +220,7 @@ a {
     top: 0;
     left: 0;
     transform-origin: left;
-    transition: transform 0.5s;
+    transition: transform 1s;
 }
 
 .front {
@@ -274,14 +277,6 @@ a {
     transform: translateZ(-4em);
 }
 
-/* PAPER FLIP EFFECT */
-
-.flipped .front,
-.flipped .back {
-    transform: rotateY(-180deg);
-}
-
-
 .book-frame {
     display: flex;
     flex-wrap: wrap;
@@ -307,6 +302,13 @@ a {
      color: var(--clr-dark);
 }
 
+/* PAPER FLIP EFFECT */
+
+.flipped .front,
+.flipped .back {
+    transition: 1s;
+    transform: rotateY(-180deg);
+}
 
 /* CONTROLLER BUTTONS */
 
@@ -641,7 +643,7 @@ h1 {
   
 .back-medal {
     transform: rotateY(.5turn);
-    color: #333;
+    color: var(--clr-light);
     --pixelbox-background-shadow-border: 6px;
     --pixelbox-background-shadow-position: bottom-right; 
 }

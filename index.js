@@ -2,8 +2,12 @@
 
 const prevBtn = document.querySelector("#prev-page");
 const nextBtn = document.querySelector("#next-page");
-const candleBtn = document.getElementById('candle-btn');
 const book = document.querySelector("#book");
+const candleBtn = document.getElementById('candle-btn');
+const heroSection = document.querySelector("#red");
+const skillsSection = document.querySelector("#green");
+const proyectsSection = document.querySelector("#yellow");
+const contactSection = document.querySelector("#blue");
 
 
 const paper1 = document.querySelector("#p1");
@@ -32,8 +36,6 @@ const disableDarkMode = () => {
     localStorage.setItem('darkMode', null);
 }
 
-
-
 darkModeToggle.addEventListener('click', () => {
     darkMode = localStorage.getItem('darkMode'); 
     if (darkMode !== 'enabled') {
@@ -43,19 +45,17 @@ darkModeToggle.addEventListener('click', () => {
   }
 });
 
-
 // BOOK LOGIC
 let currentLocation = 1;
 let numOfPapers = 7;
 let maxLocation = numOfPapers + 1;
 
 const openBook = () => {
-    book.style.transform = "translate(50%, 5%)";
+    book.style.transform = "translate(50%, 10%)";
     setTimeout(() => {
         prevBtn.style.display = "block";
-    }, 500); 
+    }, 1000); 
 };
-
 
 const closeBook = (isAtBeginning) => {
     if(isAtBeginning) {
@@ -75,22 +75,57 @@ const goNextPage = () => {
                 paper1.style.zIndex = 1;
                 break;
             case 2:
+                openBook();
+                paper1.classList.add("flipped");
+                paper1.style.zIndex = 1;
                 paper2.classList.add("flipped");
                 paper2.style.zIndex = 2;
                 break;
             case 3:
+                openBook();
+                paper1.classList.add("flipped");
+                paper1.style.zIndex = 1;
+                paper2.classList.add("flipped");
+                paper2.style.zIndex = 2;
                 paper3.classList.add("flipped");
                 paper3.style.zIndex = 3;
                 break;
             case 4:
+                openBook();
+                paper1.classList.add("flipped");
+                paper1.style.zIndex = 1;
+                paper2.classList.add("flipped");
+                paper2.style.zIndex = 2;
+                paper3.classList.add("flipped");
+                paper3.style.zIndex = 3;
                 paper4.classList.add("flipped");
                 paper4.style.zIndex = 4;
                 break;  
             case 5:
+                openBook();
+                paper1.classList.add("flipped");
+                paper1.style.zIndex = 1;
+                paper2.classList.add("flipped");
+                paper2.style.zIndex = 2;
+                paper3.classList.add("flipped");
+                paper3.style.zIndex = 3;
+                paper4.classList.add("flipped");
+                paper4.style.zIndex = 4;
                 paper5.classList.add("flipped");
                 paper5.style.zIndex = 5;
                 break;
             case 6:
+                openBook();
+                paper1.classList.add("flipped");
+                paper1.style.zIndex = 1;
+                paper2.classList.add("flipped");
+                paper2.style.zIndex = 2;
+                paper3.classList.add("flipped");
+                paper3.style.zIndex = 3;
+                paper4.classList.add("flipped");
+                paper4.style.zIndex = 4;
+                paper5.classList.add("flipped");
+                paper5.style.zIndex = 5;
                 paper6.classList.add("flipped");
                 paper6.style.zIndex = 6;
                 nextBtn.style.display = "none";
@@ -109,33 +144,80 @@ const goPrevPage = () => {
                 closeBook(true);
                 paper1.classList.remove("flipped");
                 paper1.style.zIndex = 7;
+                paper2.classList.remove("flipped");
+                paper2.style.zIndex = 6;
+                paper3.classList.remove("flipped");
+                paper3.style.zIndex = 5;
+                paper4.classList.remove("flipped");
+                paper4.style.zIndex = 4;
+                paper5.classList.remove("flipped");
+                paper5.style.zIndex = 3;
+                paper6.classList.remove("flipped");
+                paper6.style.zIndex = 2;
+                paper7.classList.remove("flipped");
+                paper7.style.zIndex = 1;
                 book.style.transform = "rotateX(25deg) rotateY(0deg) rotateZ(-10deg)";
                 book.style.transition = "transform 0.5s";
                 break;
             case 3:
                 paper2.classList.remove("flipped");
                 paper2.style.zIndex = 6;
+                paper3.classList.remove("flipped");
+                paper3.style.zIndex = 5;
+                paper4.classList.remove("flipped");
+                paper4.style.zIndex = 4;
+                paper5.classList.remove("flipped");
+                paper5.style.zIndex = 3;
+                paper6.classList.remove("flipped");
+                paper6.style.zIndex = 2;
+                paper7.classList.remove("flipped");
+                paper7.style.zIndex = 1;
+                nextBtn.style.display = "block";
                 break;
             case 4:
                 paper3.classList.remove("flipped");
                 paper3.style.zIndex = 5;
+                paper4.classList.remove("flipped");
+                paper4.style.zIndex = 4;
+                paper5.classList.remove("flipped");
+                paper5.style.zIndex = 3;
+                paper6.classList.remove("flipped");
+                paper6.style.zIndex = 2;
+                paper7.classList.remove("flipped");
+                paper7.style.zIndex = 1;
+                nextBtn.style.display = "block";
                 break;
             case 5:
                 paper4.classList.remove("flipped");
                 paper4.style.zIndex = 4;
+                paper5.classList.remove("flipped");
+                paper5.style.zIndex = 3;
+                paper6.classList.remove("flipped");
+                paper6.style.zIndex = 2;
+                paper7.classList.remove("flipped");
+                paper7.style.zIndex = 1;
+                nextBtn.style.display = "block";
                 break;
             case 6:
                 paper5.classList.remove("flipped");
                 paper5.style.zIndex = 3;
+                paper6.classList.remove("flipped");
+                paper6.style.zIndex = 2;
+                paper7.classList.remove("flipped");
+                paper7.style.zIndex = 1;
+                nextBtn.style.display = "block";
                 break;
             case 7:
                 paper6.classList.remove("flipped");
                 paper6.style.zIndex = 2;
+                paper7.classList.remove("flipped");
+                paper7.style.zIndex = 1;
                 nextBtn.style.display = "block";
                 break;
             case 8:
                 paper7.classList.remove("flipped");
                 paper7.style.zIndex = 1;
+                nextBtn.style.display = "block";
                 break;
             default:
                 throw new Error("unkown state");
@@ -145,13 +227,26 @@ const goPrevPage = () => {
     }
 }
 
-// NAV FUNCTIONS
 
-// NAV BUTTONS
-const heroBtn = document.querySelector("#about-me");
-const skillsBtn = document.querySelector("#skills");
-const projectsBtn = document.querySelector("#projects");
-const contactBtn = document.querySelector("#contact");
+const jumpTo = (page) => {
+    if (currentLocation > page) {
+        currentLocation = (page + 1)
+        goPrevPage()
+        return
+    }
+    currentLocation = (page - 1);
+    goNextPage()
+    return
+}
+
+// EVENT LISTENER
+
+prevBtn.addEventListener("click", goPrevPage);
+nextBtn.addEventListener("click", goNextPage);
+heroSection.addEventListener("click", (event) => jumpTo(2));
+skillsSection.addEventListener ("click", (event) => jumpTo(3));
+proyectsSection.addEventListener("click", (event) => jumpTo(4));
+contactSection.addEventListener("click", (event) => jumpTo(7));
 
 /*
 const navMarkdown = document.querySelectorAll(".marker");
@@ -184,24 +279,11 @@ navMarkdown.forEach(markDown => {
 
 //const navMarkUp = "";
 
-const travelToSection = () => {
 
-    const heroSection = 2;
-    const skillsSection = 3;
-    const projectsSection = 4;
-    const contactSection = 7;
-};
-
-
-// EVENT LISTENER1
+// EVENT LISTENER
 
 prevBtn.addEventListener("click", goPrevPage);
 nextBtn.addEventListener("click", goNextPage);
-heroBtn.addEventListener("click", travelToSection);
-skillsBtn.addEventListener("click", travelToSection);
-projectsBtn.addEventListener("click", travelToSection);
-contactBtn.addEventListener("click", travelToSection);
-
 
 
 // CSS HOUDINI PIXEL BOX LIBRARY FUNCTIONS

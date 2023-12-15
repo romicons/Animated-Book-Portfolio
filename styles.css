@@ -1,3 +1,14 @@
+:root {
+    --clr-light: #0d0210;
+    --clr-dark: #fffbff;
+    --clr-primary: #c9b7c7;
+    --clr-secondary: #4d3147;
+    --clr-accent: #866a80;
+
+    --foreground: var(--clr-dark);
+    --background: var(--clr-light);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -21,10 +32,12 @@
 body {
     height: 100vh;
     display: flex;
+    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
     font-family: "SHPinscher", serif, sans-serif;
     background-color: powderblue;
+    overflow: hidden;
 }
 
 h1, h2 {
@@ -36,13 +49,151 @@ a {
     text-decoration: none;
 }
 
-/* Book */
+.darkmode {
+    --clr-light: #fffbff;
+    --clr-dark: #0d0210;
+    --clr-primary: #4d3147;
+    --clr-secondary: #c9b7c7;;
+    --clr-accent: #866a80;
+
+    --foreground: var(--clr-dark);
+    --background: var(--clr-light);
+}
+
+/* ADITTIONAL NAVIGATION BUTTONS */
+
+.additional-navigation {
+    width: 100%;
+    height: 5em;
+    display: flex;
+    position: fixed;
+    justify-content: flex-end;
+    gap: 1em;
+    top: 0;
+}
+
+.nav-btn {
+    display: flex;
+    width: 3rem;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+    color: var(--clr-light);
+}
+
+/* LANGUAGE BUTTON */
+
+#lang-btn {
+    width: 3rem;
+    height: 3rem;
+    background-image: paint(pixelbox);
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    font-family: "MonaspaceKrypton";
+    font-size: 1rem;
+    --pixelbox-border: 3px;
+    --pixelbox-border-color: #000000;
+    --pixelbox-background-shadow-border: 3px;
+    --pixelbox-border-radius: 3px;
+    --pixelbox-background-shadow-position: bottom-right; 
+}
+
+#lang-btn:hover {
+    --pixelbox-background-color: var(--clr-secondary);
+    --pixelbox-background-shadow-color: var(--clr-primary);
+    color: var(--clr-dark);
+    cursor: pointer;
+}
+
+/* DARK/LIGHT MODE BUTTON */
+
+#candle-btn {
+    position: relative;
+    cursor: pointer;
+}
+
+.candle {
+    z-index: 100;
+	position: absolute;
+	width: 1rem;
+	height: 1rem;
+	background: #fff;
+	border-radius: 3px;
+	box-shadow: inset -10px 0 0 0 #E0E5FF;
+    bottom: 1rem;
+}
+
+.shadow {
+    position: absolute;
+    width: 2rem;
+    height: 8px;
+    background: #1B233E;
+    bottom: -8px;
+    left: -0.5rem;
+    border-radius: 3px;
+}
+
+.wick {
+    position: absolute;
+    width: 4px;
+    height: 0.5rem;
+    top: -8px;
+    left: 0.4rem;
+    background: #AD88A9;
+    border-radius: 2px 2px 0 0;
+}
+
+.flame-active {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    top: -1.2rem;
+    left: 0;
+    background: #FFAD00;
+    border-radius: 8px 8px 8px 8px / 20px 20px 8px 8px;
+    animation: 
+        wind 15s ease-in-out infinite, 
+        size 20s ease-in-out infinite, 
+        flickr 5s ease-in-out infinite;
+    transform-origin: 50% 100%;
+}
+
+        @keyframes wind {
+        0%, 22%, 49%, 62%, 81%, 100% {
+            border-radius: 2px 14px 8px 8px / 20px 20px 8px 8px;
+        }
+        14%, 32%, 56%, 70%, 89% {
+            border-radius: 14px 2px 8px 8px / 20px 20px 8px 8px;
+        }
+        }
+
+        @keyframes size {
+        0%, 22%, 49%, 62%, 81%, 100% {
+            transform: scale(1,1);
+        }
+        14%, 32%, 56%, 70%, 89% {
+            transform: scale(0.9, 1.2);
+        }
+        }
+
+        @keyframes flickr {
+        0%, 22%, 49%, 62%, 81%, 100% {
+            box-shadow: 0 0 20px 0 rgba(255,202,0,0.7);
+        }
+        14%, 32%, 56%, 70%, 89% {
+            box-shadow: 0 0 20px 0 rgba(255,202,0,.8);
+        }
+}
+
+/* BOOK */
 
 .book {
     position: relative;
     width: 27em;
     height: 36em;
-    color: #0d0210;
+    top: 1.2em;
+    color: var(--clr-light);
     transform-style: preserve-3d;
     transform: rotateX(25deg) rotateY(0deg) rotateZ(-10deg);
     transition: transform 0.5s;
@@ -59,7 +210,7 @@ a {
 
 .front,
 .back {
-    background-color: white;
+    background-color: var(--foreground);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -116,14 +267,14 @@ a {
 .bottom-cover {
     width: 27em;
     height: 36em;
-    background-color: #866a80;
+    background-color: var(--clr-accent);
     position: absolute;
     top: -0.2em;
     left: -0.4em;
     transform: translateZ(-4em);
 }
 
-/* Paper flip effect */
+/* PAPER FLIP EFFECT */
 
 .flipped .front,
 .flipped .back {
@@ -149,8 +300,13 @@ a {
     bottom: 0;
     margin: auto;
     gap: 2em;
-    color: #fffbff;
 }
+
+.cover_img {
+    width: 65%;
+     color: var(--clr-dark);
+}
+
 
 /* CONTROLLER BUTTONS */
 
@@ -173,7 +329,7 @@ a {
     left: -4px; 
     height: 100%;
     width: 4px; 
-    background: #4d3147;
+    background: var(--clr-secondary);
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5); 
     z-index: -1;
     transition: width 0.3s ease; /
@@ -192,7 +348,7 @@ a {
     z-index: 90;
     left: -1rem;
     top: 0;
-    margin: 0 100%;
+    margin-left: 100%;
     cursor: pointer;
     transition: transform 0.5s;
 }
@@ -201,10 +357,10 @@ a {
     content: '';
     position: absolute;
     top: 0;
-    right: -4px; /* Cambiado de 'left' a 'right' */
+    right: -4px;
     height: 100%;
     width: 4px;
-    background: #4d3147;
+    background: var(--clr-secondary);
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5);
     z-index: -1;
     transition: width 0.3s ease;
@@ -272,7 +428,7 @@ nav {
 }
 
 .marker:hover {
-    box-shadow: 0.1em -0.1em 0.375em 0.0625em #4d3147;
+    box-shadow: 0.1em -0.1em 0.375em 0.0625em var(--clr-secondary);
 }
 
 .nav-icon {
@@ -321,12 +477,12 @@ nav {
 
 h2 {
     font-size: 2em;
-    text-shadow: 1px 1px 0px #866a80,
-    1px 2px 0px #866a80,
-    1px 3px 0px #866a80,
-    1px 4px 0px #866a80,
-    1px 5px 0px #866a80,
-    1px 6px 0px #866a80,
+    text-shadow: 1px 1px 0px var(--clr-accent),
+    1px 2px 0px var(--clr-accent),
+    1px 3px 0px var(--clr-accent),
+    1px 4px 0px var(--clr-accent),
+    1px 5px 0px var(--clr-accent),
+    1px 6px 0px var(--clr-accent),
     1px 10px 5px rgba(16, 16, 16, 0.5),
     1px 15px 10px rgba(16, 16, 16, 0.4),
     1px 20px 30px rgba(16, 16, 16, 0.3),
@@ -341,10 +497,10 @@ h2 {
 /* FRONT COVER STYLE */
 
 #f1 {
-    background-color: #866a80;
+    background-color: var(--clr-accent);
     font-weight: bold;
     font-size: 1.2em;
-    color: #fffbff;
+    color: var(--clr-dark);
 }
 
 /* HERO STYLE */
@@ -356,7 +512,6 @@ h2 {
     justify-content: space-evenly;
     align-items: center;
     padding: 1em;
-    margin: 1em;
 }
 
 #f2 {
@@ -372,6 +527,17 @@ h2 {
 
 h1 {
     font-size: 2.8rem;
+    color: var(--clr-accent);
+    text-shadow: 1px 1px 0px var(--clr-secondary),
+    1px 2px 0px var(--clr-secondary),
+    1px 3px 0px var(--clr-secondary),
+    1px 4px 0px var(--clr-light),
+    1px 5px 0px var(--clr-light),
+    1px 6px 0px var(--clr-light),
+    1px 10px 5px rgba(16, 16, 16, 0.5),
+    1px 15px 10px rgba(16, 16, 16, 0.4),
+    1px 20px 30px rgba(16, 16, 16, 0.3),
+    1px 25px 50px rgba(16, 16, 16, 0.2);
 }
 
 
@@ -390,7 +556,6 @@ h1 {
     justify-content: space-evenly;
     align-items: center;
     padding: 1em;
-    margin: 1em;
 }
   
 #f3 {
@@ -399,7 +564,7 @@ h1 {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    margin: 1em;
+    padding: 1em;
 }
 
 .skills-container {
@@ -412,9 +577,9 @@ h1 {
   
 .box-pa {
     background-image: paint(pixelbox);
+    display: inline-block;
     --pixelbox-border: 3px;
     --pixelbox-border-color: #000000;
-    display: inline-block;
     --pixelbox-background-shadow-border: 6px;
     --pixelbox-border-radius: 7px;
     --pixelbox-background-shadow-position: bottom-right; 
@@ -525,7 +690,7 @@ h1 {
     filter: drop-shadow(1px 3px 2px grey);
     --pixelbox-background-color: #6A3c20 ;
     --pixelbox-background-shadow-border: 3px;
-    --pixelbox-background-shadow-color: #592E0B
+    --pixelbox-background-shadow-color: #592E0B;
 }
   
 .proyect-content {
@@ -577,9 +742,4 @@ h1 {
 
 .form-container {
     width: 90%;
-}
-
-.cover_img {
-    width: 65%;
-     color: #fffbff;
 }

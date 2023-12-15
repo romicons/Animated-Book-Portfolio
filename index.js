@@ -2,6 +2,7 @@
 
 const prevBtn = document.querySelector("#prev-page");
 const nextBtn = document.querySelector("#next-page");
+const candleBtn = document.getElementById('candle-btn');
 const book = document.querySelector("#book");
 
 
@@ -14,10 +15,33 @@ const paper6 = document.querySelector("#p6");
 const paper7 = document.querySelector("#p7");
 
 
-const heroSection = document.querySelector("#b1");
-const skillsSection = document.querySelector("#b2");
-const proyectsSection = document.querySelector("#f4");
-const contactSection = document.querySelector("#b4");
+// FUNCTION DARK/LIGHT MODE
+
+let darkMode =localStorage.getItem('darkMode');
+const darkModeToggle = document.querySelector('#candle-btn');
+
+const enableDarkMode = () => {
+    document.body.classList.add('darkmode');
+    document.querySelector('.flame').classList.add('flame-active');
+    localStorage.setItem('darkMode', 'enabled');
+}
+
+const disableDarkMode = () => {
+    document.body.classList.remove('darkmode');
+    document.querySelector('.flame').classList.remove('flame-active');
+    localStorage.setItem('darkMode', null);
+}
+
+
+
+darkModeToggle.addEventListener('click', () => {
+    darkMode = localStorage.getItem('darkMode'); 
+    if (darkMode !== 'enabled') {
+        enableDarkMode();
+    } else {  
+        disableDarkMode(); 
+  }
+});
 
 
 // BOOK LOGIC
@@ -93,28 +117,23 @@ const goPrevPage = () => {
                 paper2.style.zIndex = 6;
                 break;
             case 4:
-                openBook();
                 paper3.classList.remove("flipped");
                 paper3.style.zIndex = 5;
                 break;
             case 5:
-                openBook();
                 paper4.classList.remove("flipped");
                 paper4.style.zIndex = 4;
                 break;
             case 6:
-                openBook();
                 paper5.classList.remove("flipped");
                 paper5.style.zIndex = 3;
                 break;
             case 7:
-                openBook();
                 paper6.classList.remove("flipped");
                 paper6.style.zIndex = 2;
                 nextBtn.style.display = "block";
                 break;
             case 8:
-                openBook();
                 paper7.classList.remove("flipped");
                 paper7.style.zIndex = 1;
                 break;
@@ -128,6 +147,13 @@ const goPrevPage = () => {
 
 // NAV FUNCTIONS
 
+// NAV BUTTONS
+const heroBtn = document.querySelector("#about-me");
+const skillsBtn = document.querySelector("#skills");
+const projectsBtn = document.querySelector("#projects");
+const contactBtn = document.querySelector("#contact");
+
+/*
 const navMarkdown = document.querySelectorAll(".marker");
 
 navMarkdown.forEach(markDown => {
@@ -154,18 +180,29 @@ navMarkdown.forEach(markDown => {
                 console.log("funciono") 
     })
 });
+*/
 
-// EVENT LISTENER
+//const navMarkUp = "";
+
+const travelToSection = () => {
+
+    const heroSection = 2;
+    const skillsSection = 3;
+    const projectsSection = 4;
+    const contactSection = 7;
+};
+
+
+// EVENT LISTENER1
 
 prevBtn.addEventListener("click", goPrevPage);
 nextBtn.addEventListener("click", goNextPage);
+heroBtn.addEventListener("click", travelToSection);
+skillsBtn.addEventListener("click", travelToSection);
+projectsBtn.addEventListener("click", travelToSection);
+contactBtn.addEventListener("click", travelToSection);
 
-/*
-heroSection.addEventListener("click", markDown);
-skillsSection.addEventListener ("click", markDown)
-proyectsSection.addEventListener("click", markDown);
-contactSection.addEventListener("click", markDown);
-*/
+
 
 // CSS HOUDINI PIXEL BOX LIBRARY FUNCTIONS
 
@@ -212,14 +249,6 @@ if ('paintWorklet' in CSS && 'registerProperty' in CSS && 'CSSUnitValue' in wind
          initialValue: '#adafbc',
          inherits: false
      });
-     
-     /*CSS.registerProperty({
-         name: '--pixelbox-background-shadow-position',
-         syntax: '<string>',
-         initialValue: 'bottom-right',
-         inherits: false
-     });
-     */
  } else {
      console.log("Not Supported");
  } 

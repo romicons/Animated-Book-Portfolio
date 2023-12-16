@@ -50,6 +50,11 @@ a {
     text-decoration: none;
 }
 
+button {
+    border: none;
+    background-color: transparent;
+}
+
 .darkmode {
     --clr-light: #fffbff;
     --clr-dark: #0d0210;
@@ -91,7 +96,6 @@ a {
     background-image: paint(pixelbox);
     display: inline-block;
     background-color: transparent;
-    border: none;
     font-family: "MonaspaceKrypton";
     font-size: 1rem;
     --pixelbox-border: 3px;
@@ -193,12 +197,11 @@ a {
 .book {
     position: relative;
     width: 27em;
-    height: 36em;
-    /*top: 1.2em;*/
+    height: 30em;
     color: var(--clr-light);
     transform-style: preserve-3d;
     transform: rotateX(25deg) rotateY(0deg) rotateZ(-10deg);
-    transition: transform 0.5s;
+    transition: 0.5s;
 }
 
 .paper {
@@ -208,7 +211,6 @@ a {
     top: 0;
     left: 0;
     perspective: 1500px;
-    transition: transform 0.5s;
 }
 
 .front,
@@ -220,7 +222,7 @@ a {
     top: 0;
     left: 0;
     transform-origin: left;
-    transition: transform 1s;
+    transition: transform 0.5s;
 }
 
 .front {
@@ -247,7 +249,7 @@ a {
 
 .side {
     width: 4em;
-    height: 36em;
+    height: 30em;
     background: #473844;
     position: absolute;
     left: -4em;
@@ -269,7 +271,7 @@ a {
 
 .bottom-cover {
     width: 27em;
-    height: 36em;
+    height: 30em;
     background-color: var(--clr-accent);
     position: absolute;
     top: -0.2em;
@@ -313,7 +315,7 @@ a {
 /* CONTROLLER BUTTONS */
 
 #prev-page {
-    display: none;
+    visibility: hidden;
     position: absolute;
     width: 1rem;
     height: 100%;
@@ -334,7 +336,7 @@ a {
     background: var(--clr-secondary);
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5); 
     z-index: -1;
-    transition: width 0.3s ease; /
+    transition: width 0.3s ease; 
 }
 
 #prev-page:hover::before {
@@ -524,7 +526,7 @@ h2 {
     align-items: center;
     text-align: center;
     align-content: center;
-    margin: 3em auto;
+    padding: 3em 0;
 }
 
 h1 {

@@ -11,15 +11,15 @@
 <body>
     <div class="additional-navigation">
         <div class="nav-btn">
-            <button id="lang-btn"> ES </button>
+            <button id="lang-btn" tabindex="1" aria-label="Change language"> ES </button>
         </div>
-        <div id="candle-btn" class="nav-btn" tabindex="0" aria-label="Activate Nocturn/Light Mode">
+        <button id="candle-btn" class="nav-btn" tabindex="2" aria-label="Activate Nocturn/Light Mode">
             <div class="candle">
                 <div class="shadow"></div>
                 <div class="wick"></div>
                 <div class="flame"></div>
             </div>
-        </div>
+        </button>
     </div>
 
 
@@ -28,16 +28,15 @@
 
         <!--CONTROLLING BUTTONS-->
 
-        <div id="prev-page"></div>
-        <div id="next-page" tabindex="0"></div>
-
+        <button id="next-page" tabindex="7" aria-label="Next page"></button>
+        <button id="prev-page" tabindex="8" aria-label="Previous page"></button>
 
         <!--NAV BAR-->
         <nav>
 
             <div class="row">
                 <div class="marker" id="red">
-                    <a href="#p2" id="about-me" class="nav-item" aria-label="Sobre mí" alt="Sobre mí">
+                    <a href="#p2" id="about-me" class="nav-item" aria-label="Sobre mí" alt="Sobre mí" tabindex="3">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="nav-icon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M13.8 10.2H13.806M10.2004 10.1999H10.2064M9.59961 13.1997C9.59961 13.1997 10.4996 14.3997 11.9996 14.3997C13.4996 14.3997 14.3996 13.1997 14.3996 13.1997M17 3H19C20.1046 3 21 3.89543 21 5V7M21 17V19C21 20.1046 20.1046 21 19 21H17M7 21H5C3.89543 21 3 20.1046 3 19V17M3 7V5C3 3.89543 3.89543 3 5 3H7M14.1 10.2C14.1 10.3657 13.9657 10.5 13.8 10.5C13.6343 10.5 13.5 10.3657 13.5 10.2C13.5 10.0343 13.6343 9.9 13.8 9.9C13.9657 9.9 14.1 10.0343 14.1 10.2ZM10.5004 10.1999C10.5004 10.3656 10.3661 10.4999 10.2004 10.4999C10.0347 10.4999 9.90039 10.3656 9.90039 10.1999C9.90039 10.0342 10.0347 9.8999 10.2004 9.8999C10.3661 9.8999 10.5004 10.0342 10.5004 10.1999ZM18 12C18 15.3137 15.3137 18 12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12Z" stroke="#fffbff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                     </a>
                 </div>
@@ -45,7 +44,7 @@
             
             <div class="row">
                 <div class="marker" id="green">
-                    <a href="#p3" id="skills" class="nav-item" aria-label="Conocimientos" alt="Conocimientos">
+                    <a href="#p3" id="skills" class="nav-item" aria-label="Conocimientos" alt="Conocimientos" tabindex="4">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="nav-icon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M19 1.48416e-05L23 0C23.2652 -9.53668e-07 23.5195 0.105355 23.7071 0.292891C23.8946 0.480426 24 0.73478 24 0.999997L24 5.00001C24 5.26523 23.8946 5.51958 23.7071 5.70712L11.9142 17.5L13.7071 19.2929C14.0976 19.6834 14.0976 20.3166 13.7071 20.7071C13.3166 21.0977 12.6834 21.0977 12.2929 20.7071L9.79289 18.2071L9.46376 17.878L5.9999 20.9955C6.00096 21.7635 5.70873 22.534 5.12132 23.1214C3.94975 24.293 2.05025 24.293 0.87868 23.1214C-0.292893 21.9498 -0.292893 20.0503 0.87868 18.8787C1.46607 18.2913 2.23647 17.9991 3.00451 18.0002L6.12202 14.5363L5.79287 14.2071L3.29289 11.7071C2.90237 11.3166 2.90237 10.6834 3.29289 10.2929C3.68342 9.90239 4.31658 9.90239 4.70711 10.2929L6.49998 12.0858L18.2929 0.292907C18.4804 0.105372 18.7348 1.57952e-05 19 1.48416e-05ZM7.91419 13.5L8.2071 13.7929L10.2071 15.7929L10.5 16.0858L22 4.5858L22 2L19.4142 2.00001L7.91419 13.5ZM7.53819 15.9524L5.00435 18.7678C5.0441 18.8035 5.08311 18.8405 5.12132 18.8787C5.15952 18.9169 5.19648 18.9559 5.23221 18.9957L8.04759 16.4618L7.53819 15.9524ZM3.20676 20.0214C2.88445 19.954 2.54009 20.0458 2.29289 20.293C1.90237 20.6835 1.90237 21.3166 2.29289 21.7072C2.68342 22.0977 3.31658 22.0977 3.70711 21.7072C3.95431 21.46 4.0461 21.1156 3.97862 20.7933C3.94032 20.6103 3.85075 20.4366 3.70711 20.293C3.56346 20.1493 3.3897 20.0597 3.20676 20.0214Z" fill="#fffbff"></path> </g></svg>
                     </a>
                 </div>
@@ -53,7 +52,7 @@
             
             <div class="row">
                 <div class="marker" id="yellow">
-                    <a href="#p4" id="projects" class="nav-item" aria-label="Proyectos" alt="Proyectos">
+                    <a href="#p4" id="projects" class="nav-item" aria-label="Proyectos" alt="Proyectos" tabindex="5">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="nav-icon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 19V6.2C4 5.0799 4 4.51984 4.21799 4.09202C4.40973 3.71569 4.71569 3.40973 5.09202 3.21799C5.51984 3 6.0799 3 7.2 3H16.8C17.9201 3 18.4802 3 18.908 3.21799C19.2843 3.40973 19.5903 3.71569 19.782 4.09202C20 4.51984 20 5.0799 20 6.2V17H6C4.89543 17 4 17.8954 4 19ZM4 19C4 20.1046 4.89543 21 6 21H20M9 7H15M9 11H15M19 17V21" stroke="#fffbff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                     </a>
                 </div>
@@ -61,7 +60,7 @@
                 
             <div class="row">
                 <div class="marker" id="blue">
-                    <a href="#p7" id="contact" class="nav-item" aria-label="Contacto" alt="Contacto">
+                    <a href="#p7" id="contact" class="nav-item" aria-label="Contacto" alt="Contacto" tabindex="6">
                     <svg fill="#fffbff" viewBox="0 0 64 64" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="nav-icon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="_x32_5_attachment"></g> <g id="_x32_4_office"></g> <g id="_x32_3_pin"></g> <g id="_x32_2_business_card"></g> <g id="_x32_1_form"></g> <g id="_x32_0_headset"></g> <g id="_x31_9_video_call"></g> <g id="_x31_8_letter_box"></g> <g id="_x31_7_papperplane"></g> <g id="_x31_6_laptop"></g> <g id="_x31_5_connection"></g> <g id="_x31_4_phonebook"></g> <g id="_x31_3_classic_telephone"></g> <g id="_x31_2_sending_mail"></g> <g id="_x31_1_man_talking"></g> <g id="_x31_0_date"></g> <g id="_x30_9_review"></g> <g id="_x30_8_email"></g> <g id="_x30_7_information"></g> <g id="_x30_6_phone_talking"></g> <g id="_x30_5_women_talking"></g> <g id="_x30_4_calling"> <g> <g> <path d="M37.415,30.3486c0.123,0.0493,0.249,0.0728,0.374,0.0728c0.3955-0.0005,0.7705-0.2368,0.9277-0.6265 c0.7988-1.9834,0.2021-4.1978-1.5205-5.6406c-1.6396-1.3745-3.7979-1.5752-5.4932-0.5142 c-0.4688,0.293-0.6104,0.9102-0.3174,1.3784c0.292,0.4683,0.9092,0.6089,1.3779,0.3169 c1.1523-0.7192,2.3809-0.2915,3.1484,0.3521c0.7949,0.6655,1.5195,1.9443,0.9492,3.3594 C36.6553,29.5596,36.9033,30.1421,37.415,30.3486z"></path> <path d="M31.9238,21.0122c2.7773-1.1084,5.6387-0.6743,7.6602,1.1616c2.0264,1.8418,2.79,4.6807,1.9912,7.4092 c-0.1553,0.5298,0.1494,1.0854,0.6787,1.2407c0.0938,0.0273,0.1885,0.0405,0.2813,0.0405c0.4336,0,0.832-0.2832,0.96-0.7197 c1.0146-3.4688,0.0313-7.0898-2.5664-9.4507c-2.6006-2.3647-6.2451-2.9375-9.7471-1.5391 c-0.5127,0.2051-0.7627,0.7871-0.5576,1.2998C30.8291,20.9678,31.4121,21.2153,31.9238,21.0122z"></path> <path d="M24.5332,39.0854c2.7695,2.8066,6.1914,5.0386,9.1543,5.9712c0.9531,0.3013,2.1611,0.5171,3.4297,0.5171 c1.1914,0,2.4365-0.1904,3.5732-0.6802c1.3105-0.5635,2.5186-1.5386,3.2305-2.6089c0.0107-0.0166,1.0996-1.6777,0.7246-2.937 c-0.4043-1.376-2.0332-2.333-3.6406-3.1812c-2.5166-1.4214-4.1309-1.8286-5.9834-0.1025 c-0.0303,0.0283-0.0586,0.0586-0.0859,0.0908c-0.4248,0.0566-1.9082-0.291-3.5498-1.6289 c-0.4072-0.3315-0.8125-0.6982-1.2041-1.0894c-0.3828-0.3833-0.75-0.7886-1.0898-1.2031 c-1.333-1.6392-1.6865-3.1138-1.627-3.5459c0.0342-0.0278,0.0654-0.0576,0.0947-0.0894c1.7207-1.8516,1.3135-3.4683-0.0938-5.96 c-0.8604-1.6299-1.8145-3.2554-3.1934-3.6665c-1.2715-0.3706-2.9238,0.7183-2.9395,0.729 c-1.0713,0.7124-2.0459,1.9189-2.6084,3.228c-1.0049,2.3433-0.7432,5.1538-0.1631,7.0034 C19.4951,32.8945,21.7266,36.3159,24.5332,39.0854z M20.5625,23.7178c0.4024-0.9375,1.1397-1.8608,1.8789-2.3525 c0.3887-0.2593,1.0195-0.4771,1.2363-0.4771c0.0107,0,0.0205,0.0005,0.0283,0.002c0.6836,0.2036,1.6328,2.0039,2.0039,2.7065 c1.3223,2.3398,1.1396,2.8125,0.4609,3.5576c-0.3398,0.2539-0.5723,0.6455-0.6621,1.1221 c-0.249,1.3218,0.5674,3.4189,2.0342,5.2212c0.3828,0.4683,0.7949,0.9233,1.2246,1.3535 c0.4395,0.439,0.8955,0.8511,1.3545,1.2251c1.7949,1.4639,3.8936,2.2788,5.2158,2.0366c0.5869-0.1089,0.9307-0.395,1.1299-0.6616 c0.7764-0.71,1.2354-0.8525,3.5781,0.4702c0.6787,0.3584,2.4805,1.3096,2.6777,1.9736c0.0283,0.2036-0.1982,0.8755-0.4678,1.2822 c-0.4912,0.7373-1.416,1.4746-2.3564,1.8794c-1.8447,0.7939-4.1738,0.5469-5.6104,0.0923 c-2.6689-0.8394-5.7852-2.8853-8.3369-5.4727c-0.0029-0.0034-0.0068-0.0063-0.0098-0.0098 c-2.5869-2.5518-4.6328-5.6675-5.4727-8.334C20.0186,27.894,19.7715,25.5605,20.5625,23.7178z"></path> <path d="M47.7549,1H16.2451c-1.9424,0-3.5234,1.5806-3.5234,3.5234v54.9531c0,1.9429,1.5811,3.5234,3.5234,3.5234h31.5098 c1.9424,0,3.5234-1.5806,3.5234-3.5234V4.5234C51.2783,2.5806,49.6973,1,47.7549,1z M39.2705,3v1.1294 c0,0.623-0.5068,1.1299-1.1289,1.1299H25.8584c-0.6221,0-1.1289-0.5068-1.1289-1.1299V3H39.2705z M16.2451,3h6.4844v1.1294 c0,1.7256,1.4033,3.1299,3.1289,3.1299h12.2832c1.7256,0,3.1289-1.4043,3.1289-3.1299V3h6.4844 c0.8398,0,1.5234,0.6836,1.5234,1.5234v51.1733H14.7217V4.5234C14.7217,3.6836,15.4053,3,16.2451,3z M47.7549,61H16.2451 c-0.8398,0-1.5234-0.6836-1.5234-1.5234v-1.7798h34.5566v1.7798C49.2783,60.3164,48.5947,61,47.7549,61z"></path> </g> </g> </g> <g id="_x30_3_women"></g> <g id="_x30_2_writing"></g> <g id="_x30_1_chatting"></g> </g></svg>
                     </a>
                 </div>
@@ -103,7 +102,10 @@
                 <div id="f2" class="front-content">
                     <div class="header-section">
                             <p>
-                                Desarrolladora Frontend, Profesora y Lic. en Artes Audiovisuales. Me apasiona el diseño web y me entusiasma crear sitios y aplicaciones atractivas que le faciliten la vida a mis clientes y usuarios. Estoy siempre lista para aceptar nuevos desafios y trabajar con otros para llevar a la pantalla mis ideas.
+                                Desarrolladora Frontend, Profesora y Lic. en Artes Audiovisuales. Me apasiona el diseño web y me entusiasma crear sitios y aplicaciones atractivas que le faciliten la vida a mis clientes y usuarios.
+                            </p>
+                            <p> 
+                                Estoy siempre lista para aceptar nuevos desafios y trabajar con otros para llevar a la pantalla mis ideas.
                             </p>
                     </div>
                 </div>
@@ -114,7 +116,10 @@
                     <div class="header-section">
                         <h2>CONOCIMIENTOS</h2>
                         <p>
-                            Aquí podras encontrar mi arsenal de conocimientos. ¡Pero cuidado! También estoy aprendiendo constantemente sobre las últimas tecnologías y tendencias en el campo. Considero que mantenerse al día con las herramientas y técnicas emergentes es esencial para ofrecerle los mejores resultados posibles a mis clientes y usuarios. 
+                            Aquí podrás ver mi arsenal de conocimientos. ¡Pero cuidado! También estoy aprendiendo constantemente sobre las últimas tecnologías y tendencias en el campo. 
+                        </p>
+                        <p>    
+                            Considero que mantenerse al día con las herramientas y técnicas emergentes es esencial para ofrecerle los mejores resultados posibles a mis clientes y usuarios. 
                         </p>
                     </div>
                 </div>
@@ -204,7 +209,7 @@
                     <img src="img/avatars/avatar reading placeholder.png" class="avatar-img">
                     <div class="header-section">
                         <h2>PROYECTOS</h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid repellendus voluptatibus facilis esse atque similique necessitatibus architecto fugiat tempore, quae aut laborum expedita excepturi tenetur deleniti molestiae tempora numquam consequatur!</p>
+                        <p>Te invito a visitar algunos de mis proyectos, desarrollados con mucha dedicación y atención a los detalles. </p>
                     </div>
                 </div>
             </div>
@@ -338,7 +343,7 @@
                                     </h3>
                                 </a>
                                 <p class="proyect-description">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti reprehenderit architecto nulla fugit, ad exercitationem dolorem. Fuga quibusdam sunt vel vitae adipisci deleniti, voluptatibus maiores perspiciatis animi atque eveniet nesciunt.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque nulla, rem autem nesciunt ea eum fugiat aliquid quae reiciendis officia consectetur quam laborum atque minus ipsum voluptatibus harum et quibusdam.
                                 </p>
                               </div>
                         </div>
@@ -354,7 +359,10 @@
                             CONTACTAME
                         </h2>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo ipsa ab recusandae amet nulla culpa fugit, dolorem sapiente assumenda maiores, nihil explicabo porro vitae quas in fuga necessitatibus deleniti ipsam!
+                            ¿Te gustó mi trabajo? ¡Entonces no dudes en contactarme! 
+                        </p>
+                        <p>
+                            Juntes podremos crear algo <u>único</u>.
                         </p>
                     </div>
                 </div>

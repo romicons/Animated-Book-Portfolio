@@ -50,11 +50,13 @@ let currentLocation = 1;
 let numOfPapers = 7;
 let maxLocation = numOfPapers + 1;
 
+let isBookOpen = false;
+
 const openBook = () => {
     book.style.transform = "translate(50%, 10%)";
+    prevBtn.style.visibility = "visible";
     setTimeout(() => {
-        prevBtn.style.display = "block";
-    }, 1000); 
+    }, 1000);
 };
 
 const closeBook = (isAtBeginning) => {
@@ -134,6 +136,7 @@ const goNextPage = () => {
                 throw new Error("unkown state");
         }
         currentLocation++;
+
     }
 }
 

@@ -197,7 +197,7 @@ button {
 .book {
     position: relative;
     width: 27em;
-    height: 30em;
+    height: 32em;
     color: var(--clr-light);
     transform-style: preserve-3d;
     transform: rotateX(25deg) rotateY(0deg) rotateZ(-10deg);
@@ -249,7 +249,7 @@ button {
 
 .side {
     width: 4em;
-    height: 30em;
+    height: 32em;
     background: #473844;
     position: absolute;
     left: -4em;
@@ -271,7 +271,7 @@ button {
 
 .bottom-cover {
     width: 27em;
-    height: 30em;
+    height: 32em;
     background-color: var(--clr-accent);
     position: absolute;
     top: -0.2em;
@@ -445,22 +445,18 @@ nav {
 
 #red {
     background-color: #FF1E1C;
-    transform: translateZ(-1rem);
 }
 
 #blue {
     background-color: #0071B3;
-    transform: translateZ(-2rem);
 }
 
 #yellow {
     background-color: #F9E701;
-    transform: translateZ(-3rem);
 }
 
 #green {
     background-color: #009055;
-    transform: translateZ(-4rem);
 }
 
 /* PAGES STYLING */

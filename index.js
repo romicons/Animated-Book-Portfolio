@@ -266,7 +266,7 @@ const jumpTo = (page) => {
     setTimeout(() => {
     goNextPage()
     return
-    }, 500);
+    }, 250);
 }
 
 // EVENT LISTENER

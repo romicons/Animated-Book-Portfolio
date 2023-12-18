@@ -270,7 +270,7 @@ button {
 }
 
 .bottom-cover {
-    width: 27em;
+    width: 27.5em;
     height: 32em;
     background-color: var(--clr-accent);
     position: absolute;

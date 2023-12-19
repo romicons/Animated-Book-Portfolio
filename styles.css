@@ -5,6 +5,10 @@
     --clr-secondary: #4d3147;
     --clr-accent: #866a80;
     --clr-backbody: #d7fffe;
+    --clr-shadow1: #10101080;
+    --clr-shadow2: #10101066;
+    --clr-shadow3: #1010104D;
+    --clr-shadow4: #10101033;
 
     --foreground: var(--clr-dark);
     --background: var(--clr-light);
@@ -57,12 +61,16 @@ button {
 
 .darkmode {
     --clr-light: #fffbff;
-    --clr-dark: #0d0210;
+    --clr-dark: #3B3E4F;
     --clr-primary: #4d3147;
     --clr-secondary: #c9b7c7;;
     --clr-accent: #866a80;
+    --clr-shadow1: #EFEFEF80;
+    --clr-shadow2: #EFEFEF66;
+    --clr-shadow3: #EFEFEF4D;
+    --clr-shadow4: #EFEFEF33;
 
-    --clr-backbody: #001146;
+    --clr-backbody: #0d0210;
     --foreground: var(--clr-dark);
     --background: var(--clr-light);
 }
@@ -99,6 +107,7 @@ button {
     font-family: "MonaspaceKrypton";
     font-size: 1rem;
     --pixelbox-border: 3px;
+    --pixel-background-color: var(--clr-dark);
     --pixelbox-border-color: #000000;
     --pixelbox-background-shadow-border: 3px;
     --pixelbox-border-radius: 3px;
@@ -459,6 +468,15 @@ nav {
     background-color: #009055;
 }
 
+@keyframes goDown {
+    0% {
+    top: 1rem;
+    }
+    100% {
+    top: 3.5rem;
+    };
+};
+
 /* PAGES STYLING */
 
 .header-section {
@@ -483,10 +501,10 @@ h2 {
     1px 4px 0px var(--clr-accent),
     1px 5px 0px var(--clr-accent),
     1px 6px 0px var(--clr-accent),
-    1px 10px 5px rgba(16, 16, 16, 0.5),
-    1px 15px 10px rgba(16, 16, 16, 0.4),
-    1px 20px 30px rgba(16, 16, 16, 0.3),
-    1px 25px 50px rgba(16, 16, 16, 0.2);
+    1px 10px 5px var(--clr-shadow1),
+    1px 15px 10px var(--clr-shadow2),
+    1px 20px 30px var(--clr-shadow3),
+    1px 25px 50px var(--clr-shadow4);
 }
 
 #b1, #b2, #b3, #b4, #b5, #b6, #b7 {

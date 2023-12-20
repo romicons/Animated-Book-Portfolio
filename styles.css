@@ -477,6 +477,15 @@ nav {
     };
 };
 
+@keyframes goUp {
+    0% {
+    top: 3.5rem;
+    }
+    100% {
+    top: 0.5rem;
+    };
+};
+
 /* PAGES STYLING */
 
 .header-section {

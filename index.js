@@ -80,15 +80,18 @@ const goNextPage = () => {
                 openBook();
                 paper1.classList.add("flipped");
                 paper1.style.zIndex = 1;
+                markerRed();
                 break;
+                
             case 2:
                 openBook();
                 setTimeout(() => {
                 paper1.classList.add("flipped");
                 paper1.style.zIndex = 1;
+                markerRed();
                 paper2.classList.add("flipped");
                 paper2.style.zIndex = 2;
-                markerRed();
+                markerGreen();
                 }, 250);
                 break;
             case 3:
@@ -96,12 +99,13 @@ const goNextPage = () => {
                 setTimeout(() => {
                 paper1.classList.add("flipped");
                 paper1.style.zIndex = 1;
+                markerRed();
                 paper2.classList.add("flipped");
                 paper2.style.zIndex = 2;
-                markerRed();
+                markerGreen();
                 paper3.classList.add("flipped");
                 paper3.style.zIndex = 3;
-                markerGreen();
+                markerYellow();
                 }, 250);
                 break;
             case 4:
@@ -109,15 +113,15 @@ const goNextPage = () => {
                 setTimeout(() => {
                 paper1.classList.add("flipped");
                 paper1.style.zIndex = 1;
+                markerRed();
                 paper2.classList.add("flipped");
                 paper2.style.zIndex = 2;
-                markerRed();
+                markerGreen();
                 paper3.classList.add("flipped");
                 paper3.style.zIndex = 3;
-                markerGreen();
+                markerYellow();
                 paper4.classList.add("flipped");
                 paper4.style.zIndex = 4;
-                markerYellow();
                 }, 250);
                 break;  
             case 5:
@@ -125,15 +129,15 @@ const goNextPage = () => {
                 setTimeout(() => {
                 paper1.classList.add("flipped");
                 paper1.style.zIndex = 1;
+                markerRed();
                 paper2.classList.add("flipped");
                 paper2.style.zIndex = 2;
-                markerRed();
+                markerGreen();
                 paper3.classList.add("flipped");
                 paper3.style.zIndex = 3;
-                markerGreen();
+                markerYellow();
                 paper4.classList.add("flipped");
                 paper4.style.zIndex = 4;
-                markerYellow();
                 paper5.classList.add("flipped");
                 paper5.style.zIndex = 5;
                 }, 250);
@@ -143,15 +147,15 @@ const goNextPage = () => {
                 setTimeout(() => {
                 paper1.classList.add("flipped");
                 paper1.style.zIndex = 1;
+                markerRed();
                 paper2.classList.add("flipped");
                 paper2.style.zIndex = 2;
-                markerRed();
+                markerGreen();
                 paper3.classList.add("flipped");
                 paper3.style.zIndex = 3;
-                markerGreen();
+                markerYellow();
                 paper4.classList.add("flipped");
                 paper4.style.zIndex = 4;
-                markerYellow();
                 paper5.style.zIndex = 5;
                 paper5.classList.add("flipped");
                 paper6.style.zIndex = 6;
@@ -178,15 +182,15 @@ const goPrevPage = () => {
                 setTimeout(() => {
                 paper1.classList.remove("flipped");
                 paper1.style.zIndex = 7;
+                markerRed();
                 paper2.classList.remove("flipped");
                 paper2.style.zIndex = 6;
-                markerRed();
+                markerGreen();
                 paper3.classList.remove("flipped");
                 paper3.style.zIndex = 5;
-                markerGreen();
+                markerYellow();
                 paper4.classList.remove("flipped");
                 paper4.style.zIndex = 4;
-                markerYellow();
                 paper5.classList.remove("flipped");
                 paper5.style.zIndex = 3;
                 paper6.classList.remove("flipped");
@@ -195,13 +199,13 @@ const goPrevPage = () => {
                 paper7.style.zIndex = 1;
                 book.style.transform = "rotateX(25deg) rotateY(0deg) rotateZ(-10deg)";           
                 book.style.transition = "transform 0.5s";
+                console.log("caso 2");
                 }, 250);
                 break;
             case 3:
                 setTimeout(() => {
                 paper2.classList.remove("flipped");
                 paper2.style.zIndex = 6;
-                markerRed();
                 paper3.classList.remove("flipped");
                 paper3.style.zIndex = 5;
                 markerGreen();
@@ -212,9 +216,11 @@ const goPrevPage = () => {
                 paper5.style.zIndex = 3;
                 paper6.classList.remove("flipped");
                 paper6.style.zIndex = 2;
+                markerBlue();
                 paper7.classList.remove("flipped");
                 paper7.style.zIndex = 1;
                 nextBtn.style.visibility = "visible";
+                console.log("caso 3");
             }, 250);
                 break;
             case 4:
@@ -229,9 +235,11 @@ const goPrevPage = () => {
                 paper5.style.zIndex = 3;
                 paper6.classList.remove("flipped");
                 paper6.style.zIndex = 2;
+                markerBlue();
                 paper7.classList.remove("flipped");
                 paper7.style.zIndex = 1;
                 nextBtn.style.visibility = "visible";
+                console.log("caso 4");
                 }, 250);
                 break;
             case 5:
@@ -243,9 +251,11 @@ const goPrevPage = () => {
                 paper5.style.zIndex = 3;
                 paper6.classList.remove("flipped");
                 paper6.style.zIndex = 2;
+                markerBlue();
                 paper7.classList.remove("flipped");
                 paper7.style.zIndex = 1;
                 nextBtn.style.display = "block";
+                console.log("caso 5");
                 }, 250);
                 break;
             case 6:
@@ -254,18 +264,22 @@ const goPrevPage = () => {
                 paper5.style.zIndex = 3;
                 paper6.classList.remove("flipped");
                 paper6.style.zIndex = 2;
+                markerBlue();
                 paper7.classList.remove("flipped");
                 paper7.style.zIndex = 1;
                 nextBtn.style.visibility = "visible";
+                console.log("caso 6");
                 }, 250);
                 break;
             case 7:
                 setTimeout(() => {
                 paper6.classList.remove("flipped");
                 paper6.style.zIndex = 2;
+                markerBlue();
                 paper7.classList.remove("flipped");
                 paper7.style.zIndex = 1;
                 nextBtn.style.visibility = "visible";
+                console.log("caso 7");
                 }, 250);
                 break;
             case 8:
@@ -300,18 +314,17 @@ const jumpTo = (page) => {
     }, 250);
 }
 
+// FUNCION TO ANIMATE THE MARKERS
 
 let navMarker = document.querySelectorAll('.marker');
 let markerElements = Array.from(navMarker);  
 let markdownTip = document.createElement('style');
 
 navMarkDown = (page, markerIndex) => {
+    // WHEN THE USER IS ON A SECTION, THE MARKER GOES DOWN
     let markerElement = markerElements[markerIndex];
     if (currentLocation === page && markerElement) {
-        console.log("entro en funcionamiento");
-
-        markerElement.style.zIndex = "10";
-        
+        markerElement.style.zIndex = "10";  
         setTimeout(() => {
             markerElement.style.height = "4.6rem";
             markerElement.style.transition = "height 0.5s";
@@ -322,19 +335,36 @@ navMarkDown = (page, markerIndex) => {
                     content: '';
                     width: 2.2rem;
                     height: 2.2rem;
-                    top: 1rem;
+                    top: 1.2rem;
                     background-color: inherit;
                     transform: rotate(45deg);
                     z-index: -1;
-                    animation: goDown 0.5s forwards;
+                    animation: goDown 0.4s forwards;
                 }
             `;
             document.head.appendChild(markdownTip);
         }, 500);
-    }
+    } else {
+    // THE MARKER GOES UP
+        markerElement.style.zIndex = "0";
+    }   markdownTip.innerHTML = `
+                .marker::before {
+                    position: absolute;
+                    content: '';
+                    width: 2.2rem;
+                    height: 2.2rem;
+                    top: 0.5rem;
+                    background-color: inherit;
+                    transform: rotate(45deg);
+                    z-index: -1;
+                    animation: goUp 0.4s forwards;
+                }
+            `;
+        markerElement.style.height = "3.125rem";
+        markerElement.style.transition = "height 0.5s";
 }
 
-markerRed = () => { navMarkDown(2, 0) };
+markerRed = () => { navMarkDown(1, 0) };
 markerGreen = () => { navMarkDown(3, 1) };
 markerYellow = () => { navMarkDown(4, 2) };
 markerBlue = () => { navMarkDown(7, 3) };

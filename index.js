@@ -47,10 +47,6 @@ darkModeToggle.addEventListener('click', () => {
 
 // BOOK LOGIC
 
-let currentLocation = 1;
-let numOfPapers = 7;
-let maxLocation = numOfPapers + 1;
-
     // FUNCTION TO OPEN THE BOOK
 
 const openBook = () => {
@@ -71,254 +67,104 @@ const closeBook = (isAtBeginning) => {
     }
 }
 
+        // NAVIGATION OF THE BOOK
+
+/* You may wonder why the book starts at 8 and the goNextPage decrements while the goPrevPage increments the value of currentLocation.
+Doesn't it sound counterintuitive? There's a logical explanation for this. Because the z-index property is being used to keep the book
+ as a stack of papers that only display as you go through pages, it's necessary for the value of currentLocation to maintain 
+ this index in order to display the content of the book correctly. */
+
+
+let currentLocation = 8;
+let numOfPapers = 8;
+let maxLocation = numOfPapers + 1;
+
+const papers = {
+    1: paper7,
+    2: paper6,
+    3: paper5,
+    4: paper4,
+    5: paper3,
+    6: paper2,
+    7: paper1
+}
+
     // FUNCTION TO NAVIGATE TO THE NEXT PAGE
 
+const nextPageActions = (page_number) => {
+    openBook();
+    let page = papers[page_number]
+    page.classList.add("flipped");
+    page.style.zIndex = currentLocation;
+}
+  
 const goNextPage = () => {
-    if(currentLocation < maxLocation) {
-        switch(currentLocation) {
+    if (currentLocation < maxLocation) {
+        for (let i = 7; i >= currentLocation; i--) {
+            switch (i) {
             case 1:
-                openBook();
-                paper1.classList.add("flipped");
-                paper1.style.zIndex = 1;
-                markerRed();
-                break;
-                
-            case 2:
-                openBook();
-                setTimeout(() => {
-                paper1.classList.add("flipped");
-                paper1.style.zIndex = 1;
-                markerRed();
-                paper2.classList.add("flipped");
-                paper2.style.zIndex = 2;
-                markerGreen();
-                }, 250);
-                break;
-            case 3:
-                openBook();
-                setTimeout(() => {
-                paper1.classList.add("flipped");
-                paper1.style.zIndex = 1;
-                markerRed();
-                paper2.classList.add("flipped");
-                paper2.style.zIndex = 2;
-                markerGreen();
-                paper3.classList.add("flipped");
-                paper3.style.zIndex = 3;
-                markerYellow();
-                }, 250);
-                break;
-            case 4:
-                openBook();
-                setTimeout(() => {
-                paper1.classList.add("flipped");
-                paper1.style.zIndex = 1;
-                markerRed();
-                paper2.classList.add("flipped");
-                paper2.style.zIndex = 2;
-                markerGreen();
-                paper3.classList.add("flipped");
-                paper3.style.zIndex = 3;
-                markerYellow();
-                paper4.classList.add("flipped");
-                paper4.style.zIndex = 4;
-                }, 250);
-                break;  
-            case 5:
-                openBook();
-                setTimeout(() => {
-                paper1.classList.add("flipped");
-                paper1.style.zIndex = 1;
-                markerRed();
-                paper2.classList.add("flipped");
-                paper2.style.zIndex = 2;
-                markerGreen();
-                paper3.classList.add("flipped");
-                paper3.style.zIndex = 3;
-                markerYellow();
-                paper4.classList.add("flipped");
-                paper4.style.zIndex = 4;
-                paper5.classList.add("flipped");
-                paper5.style.zIndex = 5;
-                }, 250);
-                break;
-            case 6:
-                openBook();
-                setTimeout(() => {
-                paper1.classList.add("flipped");
-                paper1.style.zIndex = 1;
-                markerRed();
-                paper2.classList.add("flipped");
-                paper2.style.zIndex = 2;
-                markerGreen();
-                paper3.classList.add("flipped");
-                paper3.style.zIndex = 3;
-                markerYellow();
-                paper4.classList.add("flipped");
-                paper4.style.zIndex = 4;
-                paper5.style.zIndex = 5;
-                paper5.classList.add("flipped");
-                paper6.style.zIndex = 6;
-                paper6.classList.add("flipped")
-                markerBlue();
-                }, 250);
-                nextBtn.style.visibility = "hidden";
+                nextPageActions(i);
                 break;
             default:
-                throw new Error("unkown state");
-        }
-        currentLocation++;
-
+                setTimeout(() => {
+                nextPageActions(i);
+                }, 250);
+                break;
+            }
+      }
+      currentLocation--;
     }
 }
 
     // FUNCTION TO NAVIGATE TO THE PREVIOUS PAGE
 
-const goPrevPage = () => {
-    if(currentLocation > 1) {
-        switch(currentLocation) {
-            case 2:
-                closeBook(true);
-                setTimeout(() => {
-                paper1.classList.remove("flipped");
-                paper1.style.zIndex = 7;
-                markerRed();
-                paper2.classList.remove("flipped");
-                paper2.style.zIndex = 6;
-                markerGreen();
-                paper3.classList.remove("flipped");
-                paper3.style.zIndex = 5;
-                markerYellow();
-                paper4.classList.remove("flipped");
-                paper4.style.zIndex = 4;
-                paper5.classList.remove("flipped");
-                paper5.style.zIndex = 3;
-                paper6.classList.remove("flipped");
-                paper6.style.zIndex = 2;
-                paper7.classList.remove("flipped");
-                paper7.style.zIndex = 1;
-                book.style.transform = "rotateX(25deg) rotateY(0deg) rotateZ(-10deg)";           
-                book.style.transition = "transform 0.5s";
-                console.log("caso 2");
-                }, 250);
-                break;
-            case 3:
-                setTimeout(() => {
-                paper2.classList.remove("flipped");
-                paper2.style.zIndex = 6;
-                paper3.classList.remove("flipped");
-                paper3.style.zIndex = 5;
-                markerGreen();
-                paper4.classList.remove("flipped");
-                paper4.style.zIndex = 4;
-                markerYellow();
-                paper5.classList.remove("flipped");
-                paper5.style.zIndex = 3;
-                paper6.classList.remove("flipped");
-                paper6.style.zIndex = 2;
-                markerBlue();
-                paper7.classList.remove("flipped");
-                paper7.style.zIndex = 1;
-                nextBtn.style.visibility = "visible";
-                console.log("caso 3");
-            }, 250);
-                break;
-            case 4:
-                setTimeout(() => {
-                paper3.classList.remove("flipped");
-                paper3.style.zIndex = 5;
-                markerGreen();
-                paper4.classList.remove("flipped");
-                paper4.style.zIndex = 4;
-                markerYellow();
-                paper5.classList.remove("flipped");
-                paper5.style.zIndex = 3;
-                paper6.classList.remove("flipped");
-                paper6.style.zIndex = 2;
-                markerBlue();
-                paper7.classList.remove("flipped");
-                paper7.style.zIndex = 1;
-                nextBtn.style.visibility = "visible";
-                console.log("caso 4");
-                }, 250);
-                break;
-            case 5:
-                setTimeout(() => {
-                paper4.classList.remove("flipped");
-                paper4.style.zIndex = 4;
-                markerYellow();
-                paper5.classList.remove("flipped");
-                paper5.style.zIndex = 3;
-                paper6.classList.remove("flipped");
-                paper6.style.zIndex = 2;
-                markerBlue();
-                paper7.classList.remove("flipped");
-                paper7.style.zIndex = 1;
-                nextBtn.style.display = "block";
-                console.log("caso 5");
-                }, 250);
-                break;
-            case 6:
-                setTimeout(() => {
-                paper5.classList.remove("flipped");
-                paper5.style.zIndex = 3;
-                paper6.classList.remove("flipped");
-                paper6.style.zIndex = 2;
-                markerBlue();
-                paper7.classList.remove("flipped");
-                paper7.style.zIndex = 1;
-                nextBtn.style.visibility = "visible";
-                console.log("caso 6");
-                }, 250);
-                break;
-            case 7:
-                setTimeout(() => {
-                paper6.classList.remove("flipped");
-                paper6.style.zIndex = 2;
-                markerBlue();
-                paper7.classList.remove("flipped");
-                paper7.style.zIndex = 1;
-                nextBtn.style.visibility = "visible";
-                console.log("caso 7");
-                }, 250);
-                break;
-            case 8:
-                setTimeout(() => {
-                paper7.classList.remove("flipped");
-                paper7.style.zIndex = 1;
-                nextBtn.style.visibility = "visible";
-                }, 250);
-                break;
-            default:
-                throw new Error("unkown state");
-        }
+const prevPageActions = (page_number) => {
+    let page = papers[page_number]
+    page.classList.remove("flipped");
+    page.style.zIndex = currentLocation;
+}
 
-        currentLocation--;
+const goPrevPage = () => {
+    if (currentLocation >= 1) {
+        for (let i = currentLocation; i <= 7; i++) {
+            switch (i) {
+                case 1:
+                    prevPageActions(i);
+                    break;
+                default:
+                    setTimeout(() => {
+                        prevPageActions(i);
+                    }, 250);
+                    break; 
+            }
+        }
+        currentLocation++;
     }
 }
 
     // FUNCTION TO JUMP ACROSS THE BOOK WITH THE MARKERS
 
 const jumpTo = (page) => {
-    if (currentLocation > page) {
-        currentLocation = (page + 1)
-        goPrevPage()
+    if (currentLocation < page) {
+        currentLocation = (page - 1)
         setTimeout(() => {
+        goPrevPage()
         }, 500);
         return
     }
-    currentLocation = (page - 1);
+    currentLocation = (page + 1);
     setTimeout(() => {
     goNextPage()
     return
     }, 250);
 }
 
-// FUNCION TO ANIMATE THE MARKERS
+    // FUNCTION TO ANIMATE THE MARKERS
 
 let navMarker = document.querySelectorAll('.marker');
 let markerElements = Array.from(navMarker);  
 let markdownTip = document.createElement('style');
+
 
 navMarkDown = (page, markerIndex) => {
     // WHEN THE USER IS ON A SECTION, THE MARKER GOES DOWN
@@ -328,7 +174,6 @@ navMarkDown = (page, markerIndex) => {
         setTimeout(() => {
             markerElement.style.height = "4.6rem";
             markerElement.style.transition = "height 0.5s";
-            
             markdownTip.innerHTML = `
                 .marker::before {
                     position: absolute;
@@ -364,75 +209,22 @@ navMarkDown = (page, markerIndex) => {
         markerElement.style.transition = "height 0.5s";
 }
 
-markerRed = () => { navMarkDown(1, 0) };
-markerGreen = () => { navMarkDown(3, 1) };
-markerYellow = () => { navMarkDown(4, 2) };
-markerBlue = () => { navMarkDown(7, 3) };
+const markerRed = () => { navMarkDown(6, 0) };
+const markerGreen = () => { navMarkDown(5, 1) };
+const markerYellow = () => { navMarkDown(4, 2) };
+const markerBlue = () => { navMarkDown(1, 3) };
 
 
 // EVENT LISTENER
 
 prevBtn.addEventListener("click", goPrevPage);
 nextBtn.addEventListener("click", goNextPage);
-heroSection.addEventListener("click", (event) => jumpTo(2));
-skillsSection.addEventListener ("click", (event) => jumpTo(3));
+heroSection.addEventListener("click", (event) => jumpTo(6));
+skillsSection.addEventListener ("click", (event) => jumpTo(5));
 proyectsSection.addEventListener("click", (event) => jumpTo(4));
-contactSection.addEventListener("click", (event) => jumpTo(7));
+contactSection.addEventListener("click", (event) => jumpTo(1));
 
-
-
-/*navMarkUp.forEach(markUp => {
-    markUp = document.querySelectorAll(".marker");
-});
-*/
-
-// CSS HOUDINI PIXEL BOX LIBRARY FUNCTIONS
-
-if ('paintWorklet' in CSS && 'registerProperty' in CSS && 'CSSUnitValue' in window) {
-        
-    CSS.registerProperty({
-         name: '--pixelbox-border',
-         syntax: '<length>',
-         initialValue: '2px',
-         inherits: false
-     });
-
-     CSS.registerProperty({
-         name: '--pixelbox-border-radius',
-         syntax: '<length>',
-         initialValue: '0px',
-         inherits: false
-     });
-
-     CSS.registerProperty({
-         name: '--pixelbox-border-color',
-         syntax: '<color>',
-         initialValue: '#000000',
-         inherits: false
-     });
-    
-     CSS.registerProperty({
-         name: '--pixelbox-background-color',
-         syntax: '<color>',
-         initialValue: '#ffffff',
-         inherits: false
-     });
-
-     CSS.registerProperty({
-         name: '--pixelbox-background-shadow-border',
-         syntax: '<length>',
-         initialValue: '0px',
-         inherits: false
-     });
-     
-     CSS.registerProperty({
-         name: '--pixelbox-background-shadow-color',
-         syntax: '<color>',
-         initialValue: '#adafbc',
-         inherits: false
-     });
- } else {
-     console.log("Not Supported");
- } 
-
- CSS.paintWorklet.addModule('pixelbox.js');
+markerRed();
+markerGreen();
+markerYellow();
+markerBlue();

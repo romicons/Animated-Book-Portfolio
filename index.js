@@ -65,7 +65,7 @@ const closeBook = (isAtBeginning) => {
     } else {
         book.style.transform = "translateX(100%)";
     }
-}
+};
 
         // NAVIGATION OF THE BOOK
 
@@ -75,18 +75,18 @@ Doesn't it sound counterintuitive? There's a logical explanation for this. Becau
  this index in order to display the content of the book correctly. */
 
 
-let currentLocation = 8;
-let numOfPapers = 8;
+let currentLocation = 7;
+let numOfPapers = 7;
 let maxLocation = numOfPapers + 1;
 
 const papers = {
-    1: paper7,
-    2: paper6,
-    3: paper5,
-    4: paper4,
-    5: paper3,
-    6: paper2,
-    7: paper1
+    0: paper7,
+    1: paper6,
+    2: paper5,
+    3: paper4,
+    4: paper3,
+    5: paper2,
+    6: paper1
 }
 
     // FUNCTION TO NAVIGATE TO THE NEXT PAGE
@@ -100,10 +100,11 @@ const nextPageActions = (page_number) => {
   
 const goNextPage = () => {
     if (currentLocation < maxLocation) {
-        for (let i = 7; i >= currentLocation; i--) {
+        for (let i = 6; i >= currentLocation; i--) {
             switch (i) {
             case 1:
                 nextPageActions(i);
+                nextBtn.style.visibility = "hidden";
                 break;
             default:
                 setTimeout(() => {
@@ -121,19 +122,19 @@ const goNextPage = () => {
 const prevPageActions = (page_number) => {
     let page = papers[page_number]
     page.classList.remove("flipped");
-    page.style.zIndex = currentLocation;
+    //page.style.zIndex = currentLocation;
 }
 
 const goPrevPage = () => {
-    if (currentLocation >= 1) {
-        for (let i = currentLocation; i <= 7; i++) {
+    if (currentLocation >= 0) {
+        for (let i = currentLocation; i <= 6; i++) {
             switch (i) {
                 case 1:
-                    prevPageActions(i);
+                    prevPageActions(5);
                     break;
                 default:
                     setTimeout(() => {
-                        prevPageActions(i);
+                    prevPageActions(i);
                     }, 250);
                     break; 
             }
@@ -172,15 +173,15 @@ navMarkDown = (page, markerIndex) => {
     if (currentLocation === page && markerElement) {
         markerElement.style.zIndex = "10";  
         setTimeout(() => {
-            markerElement.style.height = "4.6rem";
+            markerElement.style.height = "11.6vh";
             markerElement.style.transition = "height 0.5s";
             markdownTip.innerHTML = `
                 .marker::before {
                     position: absolute;
                     content: '';
-                    width: 2.2rem;
-                    height: 2.2rem;
-                    top: 1.2rem;
+                    width: 2.2vw;
+                    height: 5vh;
+                    top: 2.2vh;
                     background-color: inherit;
                     transform: rotate(45deg);
                     z-index: -1;
@@ -196,35 +197,31 @@ navMarkDown = (page, markerIndex) => {
                 .marker::before {
                     position: absolute;
                     content: '';
-                    width: 2.2rem;
-                    height: 2.2rem;
-                    top: 0.5rem;
+                    width: 2.2vw;
+                    height: 6.125vh;
+                    top: 0.5vh;
                     background-color: inherit;
                     transform: rotate(45deg);
                     z-index: -1;
                     animation: goUp 0.4s forwards;
                 }
             `;
-        markerElement.style.height = "3.125rem";
+        markerElement.style.height = "7.125vh";
         markerElement.style.transition = "height 0.5s";
 }
 
-const markerRed = () => { navMarkDown(6, 0) };
-const markerGreen = () => { navMarkDown(5, 1) };
-const markerYellow = () => { navMarkDown(4, 2) };
-const markerBlue = () => { navMarkDown(1, 3) };
+const markerRed = () => { navMarkDown(5, 0) };
+const markerGreen = () => { navMarkDown(4, 1) };
+const markerYellow = () => { navMarkDown(3, 2) };
+const markerBlue = () => { navMarkDown(0, 3) };
 
 
 // EVENT LISTENER
 
 prevBtn.addEventListener("click", goPrevPage);
 nextBtn.addEventListener("click", goNextPage);
-heroSection.addEventListener("click", (event) => jumpTo(6));
-skillsSection.addEventListener ("click", (event) => jumpTo(5));
-proyectsSection.addEventListener("click", (event) => jumpTo(4));
-contactSection.addEventListener("click", (event) => jumpTo(1));
+heroSection.addEventListener("click", (event) => jumpTo(5));
+skillsSection.addEventListener ("click", (event) => jumpTo(4));
+proyectsSection.addEventListener("click", (event) => jumpTo(3));
+contactSection.addEventListener("click", (event) => jumpTo(0));
 
-markerRed();
-markerGreen();
-markerYellow();
-markerBlue();

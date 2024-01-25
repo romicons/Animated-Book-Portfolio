@@ -12,6 +12,16 @@
 
     --foreground: var(--clr-dark);
     --background: var(--clr-light);
+    --h2-shadow: 1px 1px 0px var(--clr-accent),
+    1px 2px 0px var(--clr-accent),
+    1px 3px 0px var(--clr-accent),
+    1px 4px 0px var(--clr-accent),
+    1px 5px 0px var(--clr-accent),
+    1px 6px 0px var(--clr-accent),
+    1px 10px 5px var(--clr-shadow1),
+    1px 15px 10px var(--clr-shadow2),
+    1px 20px 30px var(--clr-shadow3),
+    1px 25px 50px var(--clr-shadow4);
 }
 
 * {
@@ -63,7 +73,7 @@ button {
     --clr-light: #fffbff;
     --clr-dark: #3B3E4F;
     --clr-primary: #4d3147;
-    --clr-secondary: #c9b7c7;;
+    --clr-secondary: #c9b7c7;
     --clr-accent: #866a80;
     --clr-shadow1: #EFEFEF80;
     --clr-shadow2: #EFEFEF66;
@@ -205,8 +215,8 @@ button {
 
 .book {
     position: relative;
-    width: 27em;
-    height: 32em;
+    width: 28vw;
+    height: 72vh;
     color: var(--clr-light);
     transform-style: preserve-3d;
     transform: rotateX(25deg) rotateY(0deg) rotateZ(-10deg);
@@ -257,19 +267,19 @@ button {
 }
 
 .side {
-    width: 4em;
-    height: 32em;
+    width: 4.1vw;
+    height: 72vh;
     background: #473844;
     position: absolute;
-    left: -4em;
+    left: -4.1vw;
     top: 0;
     transform-origin: 100% 100%;
     transform: rotateY(-85deg) rotateX(0deg);
 }
 
 .book-content {
-    width: 26.8em;
-    height: 4em;
+    width: 27.8vw;
+    height: 10vh;
     background: #e2e2e2;
     position: absolute;
     bottom: 0;
@@ -279,13 +289,13 @@ button {
 }
 
 .bottom-cover {
-    width: 27.5em;
-    height: 32em;
+    width: 28.5vw;
+    height: 72vh;
     background-color: var(--clr-accent);
     position: absolute;
-    top: -0.2em;
-    left: -0.4em;
-    transform: translateZ(-4em);
+    top: -0.2vh;
+    left: -0.4vw;
+    transform: translateZ(-4vw);
     z-index: 0;
 }
 
@@ -329,7 +339,7 @@ button {
     position: absolute;
     width: 1rem;
     height: 100%;
-    margin: 0 -100%;;
+    margin: 0 -100%;
     background-color: transparent;
     z-index: 90;
     cursor: pointer;
@@ -427,14 +437,14 @@ nav {
 }
 
 .row {
-    width: 3.125rem;
-    height: 6.4rem;
+    width: 3.125vw;
+    height: 14.4vh;
 }
 
 .marker {
     display: flex;
     justify-content: center;
-    height: 3.125rem;
+    height: 7.125vh;
     position: relative;
     perspective: 6rem;
     transform-style: preserve-3d;
@@ -471,19 +481,19 @@ nav {
 
 @keyframes goDown {
     0% {
-    top: 1rem;
+    top: 1vh;
     }
     100% {
-    top: 3.5rem;
+    top: 9.2vh;
     };
 };
 
 @keyframes goUp {
     0% {
-    top: 3.5rem;
+    top: 3.5vh;
     }
     100% {
-    top: 0.5rem;
+    top: 0.5vh;
     };
 };
 
@@ -505,16 +515,7 @@ nav {
 
 h2 {
     font-size: 2em;
-    text-shadow: 1px 1px 0px var(--clr-accent),
-    1px 2px 0px var(--clr-accent),
-    1px 3px 0px var(--clr-accent),
-    1px 4px 0px var(--clr-accent),
-    1px 5px 0px var(--clr-accent),
-    1px 6px 0px var(--clr-accent),
-    1px 10px 5px var(--clr-shadow1),
-    1px 15px 10px var(--clr-shadow2),
-    1px 20px 30px var(--clr-shadow3),
-    1px 25px 50px var(--clr-shadow4);
+    text-shadow: var(--h2-shadow);
 }
 
 #b1, #b2, #b3, #b4, #b5, #b6, #b7 {
